@@ -44,6 +44,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  overflow-y: auto;
+  max-height: calc(100vh - 32px);
 }
 
 .eyebrow {
@@ -134,6 +136,136 @@ select {
 .popup-line {
   margin: 0;
   font-size: 0.88rem;
+}
+
+.popup-line {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+/* Section Organization */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--line);
+}
+
+/* Career Path Buttons */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.role-button {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 12px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Space Grotesk", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.role-button:hover {
+  border-color: var(--accent);
+  background: #fff5f4;
+}
+
+.role-button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Top Cities List */
+.city-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.city-item {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.city-item:hover {
+  background: #f9f7f5;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(31, 42, 68, 0.08);
+}
+
+.city-item.highlighted {
+  background: #fff5f4;
+  border-color: var(--accent);
+  border-left: 4px solid var(--accent);
+}
+
+.city-item-title {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.city-item-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #4d5a7a;
+}
+
+.city-item-stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.city-item-stat-label {
+  font-weight: 600;
+}
+
+.city-item-stat-value {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.city-item-score {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.score-value {
+  background: var(--accent-2);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 700;
 }
 
 @media (max-width: 940px) {
