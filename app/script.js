@@ -1,156 +1,93 @@
-// Expanded data with career paths and roles
-const majorCareerData = {
-  "Accounting": {
-    roles: [
-      {
-        title: "Accountant",
-        description: "Entry-level role focused on tax prep and financial record-keeping.",
-        cities: [
-          { city: "Dallas", state: "TX", salary: 70000, rent: 1500, lat: 32.7767, lng: -96.7970, demand: "Strong" },
-          { city: "Chicago", state: "IL", salary: 72000, rent: 1800, lat: 41.8781, lng: -87.6298, demand: "Strong" },
-          { city: "Atlanta", state: "GA", salary: 68000, rent: 1400, lat: 33.7490, lng: -84.3880, demand: "Very Strong" },
-          { city: "New York", state: "NY", salary: 80000, rent: 2800, lat: 40.7128, lng: -74.0060, demand: "Strong" },
-          { city: "Charlotte", state: "NC", salary: 69000, rent: 1500, lat: 35.2271, lng: -80.8431, demand: "Strong" }
-        ]
-      },
-      {
-        title: "Financial Analyst",
-        description: "Mid-level role analyzing financial data and trends.",
-        cities: [
-          { city: "New York", state: "NY", salary: 85000, rent: 2800, lat: 40.7128, lng: -74.0060, demand: "Very Strong" },
-          { city: "Dallas", state: "TX", salary: 82000, rent: 1500, lat: 32.7767, lng: -96.7970, demand: "Strong" },
-          { city: "Chicago", state: "IL", salary: 80000, rent: 1800, lat: 41.8781, lng: -87.6298, demand: "Strong" }
-        ]
-      }
+// Central app configuration lives here so future datasets can be added
+// without touching the rendering logic. To wire a new career path later,
+// add a JSON file and one DATASET_BY_SELECTION entry below.
+const APP_CONFIG = {
+  majorCareerPaths: {
+    Finance: [
+      "Financial Analysis",
+      "Credit & Lending",
+      "Financial Advising",
+      "Risk & Compliance"
+    ],
+    Accounting: [
+      "Accounting / Audit",
+      "Financial Analysis (Accounting Track)",
+      "Risk / Compliance"
+    ],
+    Marketing: [
+      "Market Research / Analytics",
+      "Public Relations",
+      "Advertising / Campaign Strategy",
+      "Sales / Client Strategy"
+    ],
+    BIS: [
+      "Business / Strategy",
+      "Data / Analytics",
+      "Cybersecurity",
+      "Systems / IT"
+    ],
+    "Supply Chain": [
+      "Logistics",
+      "Procurement / Sourcing",
+      "Operations / Planning",
+      "Transportation / Distribution"
+    ],
+    Management: [
+      "Business Operations",
+      "Project Management",
+      "Human Resources",
+      "Sales / Business Development"
+    ],
+    "Innovation & Entrepreneurship": [
+      "Startup / Business Operations",
+      "Product / Innovation",
+      "Growth / Marketing",
+      "Sales / Business Development"
     ]
   },
-  "Finance": {
-    roles: [
-      {
-        title: "Financial Analyst",
-        description: "Analyze investments and market opportunities.",
-        cities: [
-          { city: "New York", state: "NY", salary: 95000, rent: 2800, lat: 40.7128, lng: -74.0060, demand: "Very Strong" },
-          { city: "Chicago", state: "IL", salary: 85000, rent: 1800, lat: 41.8781, lng: -87.6298, demand: "Strong" },
-          { city: "Charlotte", state: "NC", salary: 80000, rent: 1500, lat: 35.2271, lng: -80.8431, demand: "Strong" },
-          { city: "Dallas", state: "TX", salary: 82000, rent: 1500, lat: 32.7767, lng: -96.7970, demand: "Strong" },
-          { city: "Atlanta", state: "GA", salary: 78000, rent: 1400, lat: 33.7490, lng: -84.3880, demand: "Very Strong" }
-        ]
-      },
-      {
-        title: "Investment Manager",
-        description: "Manage portfolios and investment strategies.",
-        cities: [
-          { city: "New York", state: "NY", salary: 120000, rent: 2800, lat: 40.7128, lng: -74.0060, demand: "Strong" },
-          { city: "Boston", state: "MA", salary: 115000, rent: 2400, lat: 42.3601, lng: -71.0589, demand: "Strong" }
-        ]
-      }
-    ]
+  datasetBySelection: {
+    "BIS::Business / Strategy": "./data/business_strategy.json"
   },
-  "Marketing": {
-    roles: [
-      {
-        title: "Marketing Specialist",
-        description: "Execute marketing campaigns and analyze performance.",
-        cities: [
-          { city: "New York", state: "NY", salary: 75000, rent: 2800, lat: 40.7128, lng: -74.0060, demand: "Very Strong" },
-          { city: "Los Angeles", state: "CA", salary: 72000, rent: 2600, lat: 34.0522, lng: -118.2437, demand: "Very Strong" },
-          { city: "Chicago", state: "IL", salary: 70000, rent: 1800, lat: 41.8781, lng: -87.6298, demand: "Strong" },
-          { city: "Austin", state: "TX", salary: 72000, rent: 1800, lat: 30.2672, lng: -97.7431, demand: "Very Strong" },
-          { city: "Atlanta", state: "GA", salary: 68000, rent: 1400, lat: 33.7490, lng: -84.3880, demand: "Strong" }
-        ]
-      },
-      {
-        title: "Brand Manager",
-        description: "Develop brand strategy and oversee campaigns.",
-        cities: [
-          { city: "New York", state: "NY", salary: 95000, rent: 2800, lat: 40.7128, lng: -74.0060, demand: "Strong" },
-          { city: "Los Angeles", state: "CA", salary: 92000, rent: 2600, lat: 34.0522, lng: -118.2437, demand: "Strong" }
-        ]
-      }
-    ]
+  copy: {
+    selectMajor: "Select a major to see career paths.",
+    selectCareerPath: "Choose a career path to load city results.",
+    loading: "Loading dataset...",
+    missingDataset: "This career path is ready for future data, but its JSON file has not been mapped yet.",
+    noResults: "No city data is available for this selection.",
+    loadError: "The selected dataset could not be loaded."
   },
-  "BIS": {
-    roles: [
-      {
-        title: "Business Analyst",
-        description: "Optimize business processes with data-driven recommendations.",
-        cities: [
-          { city: "Austin", state: "TX", salary: 95000, rent: 1800, lat: 30.2672, lng: -97.7431, demand: "Very Strong" },
-          { city: "Dallas", state: "TX", salary: 90000, rent: 1500, lat: 32.7767, lng: -96.7970, demand: "Strong" },
-          { city: "Seattle", state: "WA", salary: 110000, rent: 2200, lat: 47.6062, lng: -122.3321, demand: "Very Strong" },
-          { city: "Denver", state: "CO", salary: 95000, rent: 1900, lat: 39.7392, lng: -104.9903, demand: "Strong" },
-          { city: "Atlanta", state: "GA", salary: 88000, rent: 1400, lat: 33.7490, lng: -84.3880, demand: "Strong" }
-        ]
-      },
-      {
-        title: "Data Analyst",
-        description: "Extract insights from big data using analytics tools.",
-        cities: [
-          { city: "Seattle", state: "WA", salary: 105000, rent: 2200, lat: 47.6062, lng: -122.3321, demand: "Very Strong" },
-          { city: "San Francisco", state: "CA", salary: 125000, rent: 3500, lat: 37.7749, lng: -122.4194, demand: "Very Strong" },
-          { city: "Austin", state: "TX", salary: 100000, rent: 1800, lat: 30.2672, lng: -97.7431, demand: "Very Strong" }
-        ]
-      }
-    ]
-  },
-  "Management": {
-    roles: [
-      {
-        title: "Management Analyst",
-        description: "Improve organizational efficiency and strategy.",
-        cities: [
-          { city: "Chicago", state: "IL", salary: 90000, rent: 1800, lat: 41.8781, lng: -87.6298, demand: "Strong" },
-          { city: "Dallas", state: "TX", salary: 88000, rent: 1500, lat: 32.7767, lng: -96.7970, demand: "Strong" },
-          { city: "Atlanta", state: "GA", salary: 85000, rent: 1400, lat: 33.7490, lng: -84.3880, demand: "Strong" },
-          { city: "New York", state: "NY", salary: 100000, rent: 2800, lat: 40.7128, lng: -74.0060, demand: "Very Strong" },
-          { city: "Houston", state: "TX", salary: 87000, rent: 1400, lat: 29.7604, lng: -95.3698, demand: "Strong" }
-        ]
-      },
-      {
-        title: "Operations Manager",
-        description: "Oversee day-to-day business operations.",
-        cities: [
-          { city: "Dallas", state: "TX", salary: 92000, rent: 1500, lat: 32.7767, lng: -96.7970, demand: "Very Strong" },
-          { city: "Houston", state: "TX", salary: 90000, rent: 1400, lat: 29.7604, lng: -95.3698, demand: "Very Strong" }
-        ]
-      }
-    ]
+  map: {
+    defaultCenter: [39.5, -98.35],
+    defaultZoom: 4,
+    minZoom: 3,
+    fitPadding: [30, 30],
+    topCityLimit: 8
   }
 };
 
-// Flatten data for backwards compatibility and easier processing
-const cityCareerData = [];
-Object.entries(majorCareerData).forEach(([major, majorData]) => {
-  majorData.roles.forEach(role => {
-    role.cities.forEach(cityData => {
-      cityCareerData.push({
-        major,
-        job: role.title,
-        ...cityData
-      });
-    });
-  });
-});
-
-// State management
-let appState = {
+// App state is grouped in one place so it is easy to see what drives UI updates.
+const appState = {
   selectedMajor: "All",
-  selectedRole: null,
-  highlightedCity: null
+  selectedCareerPath: null,
+  highlightedMetro: null,
+  records: [],
+  datasetCache: {},
+  markerByMetro: {},
+  loading: false,
+  error: ""
 };
 
-// DOM elements
-const majorSelect = document.getElementById("majorSelect");
-const insightsContainer = document.getElementById("insightCards");
-const careerPathButtons = document.getElementById("careerPathButtons");
-const topCitiesContainer = document.getElementById("topCities");
+const dom = {
+  majorSelect: document.getElementById("majorSelect"),
+  insightCards: document.getElementById("insightCards"),
+  careerPathButtons: document.getElementById("careerPathButtons"),
+  topCities: document.getElementById("topCities")
+};
 
-// Initialize map
 const map = L.map("map", {
   scrollWheelZoom: true,
-  minZoom: 3
-}).setView([39.5, -98.35], 4);
+  minZoom: APP_CONFIG.map.minZoom
+}).setView(APP_CONFIG.map.defaultCenter, APP_CONFIG.map.defaultZoom);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18,
@@ -159,246 +96,453 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 const markerLayer = L.layerGroup().addTo(map);
 
-// Utility functions
-function affordabilityPercent(salary, rent) {
-  return ((rent * 12) / salary) * 100;
+function formatCurrency(value, maximumFractionDigits = 0) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits
+  }).format(value);
 }
 
-function calculateCompositeScore(record) {
-  const affordability = affordabilityPercent(record.salary, record.rent);
-  const salaryScore = Math.min((record.salary / 150000) * 50, 50);
-  const affordabilityScore = Math.max(20 - affordability / 2, 0);
-  const demandScore = record.demand === "Very Strong" ? 30 : record.demand === "Strong" ? 20 : 10;
-  return Math.round(salaryScore + affordabilityScore + demandScore);
+function formatNumber(value, maximumFractionDigits = 0) {
+  return new Intl.NumberFormat("en-US", {
+    maximumFractionDigits
+  }).format(value);
+}
+
+function createSelectionKey(major, careerPath) {
+  return `${major}::${careerPath}`;
+}
+
+function getCareerPathsForMajor(major) {
+  return APP_CONFIG.majorCareerPaths[major] || [];
+}
+
+function getDatasetPath(major, careerPath) {
+  if (!major || !careerPath) {
+    return null;
+  }
+
+  return APP_CONFIG.datasetBySelection[createSelectionKey(major, careerPath)] || null;
+}
+
+function buildEmptyState(message) {
+  return `<p class="empty-state">${message}</p>`;
+}
+
+function hasMapCoordinates(record) {
+  return Number.isFinite(record.lat) && Number.isFinite(record.lng);
+}
+
+// This is the only place that knows the incoming data shape.
+// When you swap in real BLS/Census files later, updating this mapper
+// should be enough to keep the UI layer unchanged.
+function normalizeRecord(record) {
+  return {
+    career_path: record.career_path || "",
+    bls_occupation: record.bls_occupation || "",
+    metro: record.metro || "Unknown metro",
+    employment: Number(record.employment) || 0,
+    location_quotient: Number(record.location_quotient) || 0,
+    annual_mean_wage: Number(record.annual_mean_wage) || 0,
+    hourly_mean_wage: Number(record.hourly_mean_wage) || 0,
+    score: Number(record.score) || 0,
+    lat: Number(record.lat),
+    lng: Number(record.lng)
+  };
+}
+
+function resetDataState() {
+  appState.records = [];
+  appState.highlightedMetro = null;
+  appState.loading = false;
+  appState.error = "";
+}
+
+function handleMajorChange(nextMajor) {
+  appState.selectedMajor = nextMajor;
+  appState.selectedCareerPath = null;
+  resetDataState();
+  renderApp();
+}
+
+async function handleCareerPathSelection(nextCareerPath) {
+  const isSameCareerPath = appState.selectedCareerPath === nextCareerPath;
+
+  appState.selectedCareerPath = isSameCareerPath ? null : nextCareerPath;
+  resetDataState();
+  renderApp();
+
+  if (!appState.selectedCareerPath) {
+    return;
+  }
+
+  await loadCareerPathData(appState.selectedMajor, appState.selectedCareerPath);
+}
+
+async function loadCareerPathData(major, careerPath) {
+  const datasetPath = getDatasetPath(major, careerPath);
+
+  if (!datasetPath) {
+    appState.error = APP_CONFIG.copy.missingDataset;
+    renderDataViews();
+    fitMapToRecords();
+    return;
+  }
+
+  if (appState.datasetCache[datasetPath]) {
+    appState.records = appState.datasetCache[datasetPath];
+    renderDataViews();
+    fitMapToRecords();
+    return;
+  }
+
+  appState.loading = true;
+  appState.error = "";
+  renderDataViews();
+
+  try {
+    const response = await fetch(datasetPath);
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    const json = await response.json();
+    const normalizedRecords = Array.isArray(json) ? json.map(normalizeRecord) : [];
+
+    appState.datasetCache[datasetPath] = normalizedRecords;
+    appState.records = normalizedRecords;
+  } catch (error) {
+    console.error("Failed to load dataset:", error);
+    appState.records = [];
+    appState.error = APP_CONFIG.copy.loadError;
+  } finally {
+    appState.loading = false;
+    renderDataViews();
+    fitMapToRecords();
+  }
+}
+
+function getActiveRecords() {
+  if (!appState.selectedCareerPath) {
+    return [];
+  }
+
+  return appState.records.filter((record) => record.career_path === appState.selectedCareerPath);
+}
+
+function getSortedRecords(records, field) {
+  return [...records].sort((a, b) => b[field] - a[field]);
+}
+
+// Top cities are ranked by the dataset's precomputed score.
+// That keeps the UI simple: the data file decides the overall fit,
+// and the app just sorts highest to lowest.
+function getTopMetros(records, limit = APP_CONFIG.map.topCityLimit) {
+  return getSortedRecords(records, "score").slice(0, limit);
+}
+
+// Quick Snapshot calculations:
+// 1. Highest Salary -> largest annual_mean_wage
+// 2. Strongest Market Concentration -> largest location_quotient
+// 3. Best Overall Fit -> largest score
+function calculateInsights(records) {
+  return {
+    highestSalary: getSortedRecords(records, "annual_mean_wage")[0],
+    strongestConcentration: getSortedRecords(records, "location_quotient")[0],
+    bestOverallFit: getSortedRecords(records, "score")[0]
+  };
+}
+
+function getViewStateMessage() {
+  if (appState.selectedMajor === "All") {
+    return APP_CONFIG.copy.selectMajor;
+  }
+
+  if (!appState.selectedCareerPath) {
+    return APP_CONFIG.copy.selectCareerPath;
+  }
+
+  if (appState.loading) {
+    return APP_CONFIG.copy.loading;
+  }
+
+  if (appState.error) {
+    return appState.error;
+  }
+
+  return "";
 }
 
 function getMarkerColor(score) {
-  if (score >= 85) return "#247ba0"; // Blue - excellent
-  if (score >= 70) return "#2ab7ca"; // Teal - very good
-  if (score >= 55) return "#52b788"; // Green - good
-  return "#ffb703"; // Orange - moderate
+  if (score >= 0.9) return "#247ba0";
+  if (score >= 0.8) return "#2ab7ca";
+  if (score >= 0.7) return "#52b788";
+  return "#ffb703";
 }
 
-function getActiveData() {
-  let data = cityCareerData;
-
-  if (appState.selectedMajor !== "All") {
-    data = data.filter(item => item.major === appState.selectedMajor);
-  }
-
-  if (appState.selectedRole) {
-    data = data.filter(item => item.job === appState.selectedRole);
-  }
-
-  return data;
-}
-
-function popupHtml(record) {
-  const affordability = affordabilityPercent(record.salary, record.rent);
-  const score = calculateCompositeScore(record);
-  const affordabilityLabel = affordability < 25 ? "Excellent" : affordability < 35 ? "Good" : "Moderate";
-
+function buildPopupHtml(record) {
   return `
     <div class="popup-content">
-      <h3 class="popup-title">${record.city}, ${record.state}</h3>
-      <p class="popup-line"><strong>Role:</strong> ${record.job}</p>
-      <p class="popup-line"><strong>Avg Salary:</strong> $${record.salary.toLocaleString()}</p>
-      <p class="popup-line"><strong>Avg Rent:</strong> $${record.rent.toLocaleString()}/mo</p>
-      <p class="popup-line"><strong>Affordability:</strong> ${affordability.toFixed(1)}% (${affordabilityLabel})</p>
-      <p class="popup-line"><strong>Market Demand:</strong> ${record.demand}</p>
-      <p class="popup-line"><strong>Overall Score:</strong> <strong>${score}/100</strong></p>
+      <h3 class="popup-title">${record.metro}</h3>
+      <p class="popup-line"><strong>Career Path:</strong> ${record.career_path}</p>
+      <p class="popup-line"><strong>BLS Occupation:</strong> ${record.bls_occupation}</p>
+      <p class="popup-line"><strong>Annual Mean Wage:</strong> ${formatCurrency(record.annual_mean_wage)}</p>
+      <p class="popup-line"><strong>Hourly Mean Wage:</strong> ${formatCurrency(record.hourly_mean_wage, 2)}</p>
+      <p class="popup-line"><strong>Employment:</strong> ${formatNumber(record.employment)}</p>
+      <p class="popup-line"><strong>Location Quotient:</strong> ${record.location_quotient.toFixed(2)}</p>
+      <p class="popup-line"><strong>Overall Score:</strong> ${record.score.toFixed(2)}</p>
     </div>
   `;
 }
 
+function createCareerPathButtonMarkup(careerPath) {
+  const isActive = appState.selectedCareerPath === careerPath;
+
+  return `
+    <button
+      class="career-path-button ${isActive ? "active" : ""}"
+      data-career-path="${careerPath}"
+      type="button"
+    >
+      ${careerPath}
+    </button>
+  `;
+}
+
+function createCityCardMarkup(record) {
+  const isHighlighted = appState.highlightedMetro === record.metro;
+
+  return `
+    <div class="city-item ${isHighlighted ? "highlighted" : ""}" data-metro="${record.metro}">
+      <div class="city-item-title">${record.metro}</div>
+      <div class="city-item-meta">
+        <div class="city-item-stat">
+          <span class="city-item-stat-label">Annual Wage:</span>
+          <span class="city-item-stat-value">${formatCurrency(record.annual_mean_wage)}</span>
+        </div>
+        <div class="city-item-stat">
+          <span class="city-item-stat-label">Hourly Wage:</span>
+          <span class="city-item-stat-value">${formatCurrency(record.hourly_mean_wage, 2)}</span>
+        </div>
+        <div class="city-item-stat">
+          <span class="city-item-stat-label">Employment:</span>
+          <span class="city-item-stat-value">${formatNumber(record.employment)}</span>
+        </div>
+        <div class="city-item-stat">
+          <span class="city-item-stat-label">LQ:</span>
+          <span class="city-item-stat-value">${record.location_quotient.toFixed(2)}</span>
+        </div>
+      </div>
+      <div class="city-item-score">
+        <span>Overall Fit</span>
+        <span class="score-value">${record.score.toFixed(2)}</span>
+      </div>
+    </div>
+  `;
+}
+
+function createInsightCardMarkup(title, metro, emphasis, supportingText, accentClass = "") {
+  return `
+    <article class="insight-card">
+      <h3>${title}</h3>
+      <p>${metro}</p>
+      <p class="insight-detail ${accentClass}"><strong>${emphasis}</strong></p>
+      <p>${supportingText}</p>
+    </article>
+  `;
+}
+
+function setHighlightedMetro(metro, options = {}) {
+  const shouldForce = options.force === true;
+  const isSameMetro = appState.highlightedMetro === metro;
+
+  appState.highlightedMetro = shouldForce || !isSameMetro ? metro : null;
+
+  renderTopCities();
+  renderMapMarkers();
+
+  if (!appState.highlightedMetro) {
+    return;
+  }
+
+  const marker = appState.markerByMetro[appState.highlightedMetro];
+
+  if (!marker) {
+    return;
+  }
+
+  if (options.panToMarker !== false) {
+    map.panTo(marker.getLatLng());
+  }
+
+  if (options.openPopup !== false) {
+    marker.openPopup();
+  }
+}
+
 function renderCareerPathButtons() {
   if (appState.selectedMajor === "All") {
-    careerPathButtons.innerHTML = '<p style="color: #4d5a7a; font-size: 0.9rem;">Select a major to see career paths.</p>';
+    dom.careerPathButtons.innerHTML = buildEmptyState(APP_CONFIG.copy.selectMajor);
     return;
   }
 
-  const majorData = majorCareerData[appState.selectedMajor];
-  if (!majorData) {
-    careerPathButtons.innerHTML = '';
-    return;
-  }
+  const careerPaths = getCareerPathsForMajor(appState.selectedMajor);
+  dom.careerPathButtons.innerHTML = careerPaths.map(createCareerPathButtonMarkup).join("");
 
-  careerPathButtons.innerHTML = majorData.roles.map(role => `
-    <button class="role-button ${appState.selectedRole === role.title ? 'active' : ''}" data-role="${role.title}">
-      ${role.title}
-    </button>
-  `).join('');
-
-  // Attach event listeners
-  document.querySelectorAll('.role-button').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      appState.selectedRole = appState.selectedRole === e.target.dataset.role ? null : e.target.dataset.role;
-      render();
+  dom.careerPathButtons.querySelectorAll("[data-career-path]").forEach((button) => {
+    button.addEventListener("click", async (event) => {
+      const nextCareerPath = event.currentTarget.dataset.careerPath;
+      await handleCareerPathSelection(nextCareerPath);
     });
   });
 }
 
 function renderTopCities() {
-  const activeData = getActiveData();
+  const viewStateMessage = getViewStateMessage();
 
-  if (!activeData.length) {
-    topCitiesContainer.innerHTML = '<p style="color: #4d5a7a; font-size: 0.9rem;">No cities found for this selection.</p>';
+  if (viewStateMessage) {
+    dom.topCities.innerHTML = buildEmptyState(viewStateMessage);
     return;
   }
 
-  // Group by city and calculate best salary for each city
-  const cityMap = {};
-  activeData.forEach(record => {
-    const key = `${record.city}, ${record.state}`;
-    if (!cityMap[key] || record.salary > cityMap[key].salary) {
-      cityMap[key] = record;
-    }
-  });
+  const activeRecords = getActiveRecords();
 
-  // Convert to array and sort by composite score
-  const sortedCities = Object.values(cityMap)
-    .sort((a, b) => calculateCompositeScore(b) - calculateCompositeScore(a))
-    .slice(0, 8); // Show top 8 cities
+  if (!activeRecords.length) {
+    dom.topCities.innerHTML = buildEmptyState(APP_CONFIG.copy.noResults);
+    return;
+  }
 
-  topCitiesContainer.innerHTML = sortedCities.map(record => {
-    const affordability = affordabilityPercent(record.salary, record.rent);
-    const score = calculateCompositeScore(record);
-    const isHighlighted = appState.highlightedCity === `${record.city}, ${record.state}`;
+  dom.topCities.innerHTML = getTopMetros(activeRecords).map(createCityCardMarkup).join("");
 
-    return `
-      <div class="city-item ${isHighlighted ? 'highlighted' : ''}" data-city="${record.city}" data-state="${record.state}">
-        <div class="city-item-title">${record.city}, ${record.state}</div>
-        <div class="city-item-meta">
-          <div class="city-item-stat">
-            <span class="city-item-stat-label">Salary:</span>
-            <span class="city-item-stat-value">$${(record.salary / 1000).toFixed(0)}k</span>
-          </div>
-          <div class="city-item-stat">
-            <span class="city-item-stat-label">Rent:</span>
-            <span class="city-item-stat-value">$${record.rent.toLocaleString()}/mo</span>
-          </div>
-          <div class="city-item-stat">
-            <span class="city-item-stat-label">Affordability:</span>
-            <span class="city-item-stat-value">${affordability.toFixed(1)}%</span>
-          </div>
-          <div class="city-item-stat">
-            <span class="city-item-stat-label">Demand:</span>
-            <span class="city-item-stat-value">${record.demand}</span>
-          </div>
-        </div>
-        <div class="city-item-score">
-          <span>Overall Fit</span>
-          <span class="score-value">${score}/100</span>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  // Attach event listeners
-  document.querySelectorAll('.city-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const city = item.dataset.city;
-      const state = item.dataset.state;
-      appState.highlightedCity = appState.highlightedCity === `${city}, ${state}` ? null : `${city}, ${state}`;
-      renderTopCities();
-      renderMapMarkers();
+  dom.topCities.querySelectorAll("[data-metro]").forEach((item) => {
+    item.addEventListener("click", () => {
+      setHighlightedMetro(item.dataset.metro, {
+        panToMarker: true,
+        openPopup: true
+      });
     });
   });
 }
 
 function renderInsightCards() {
-  const activeData = getActiveData();
+  const viewStateMessage = getViewStateMessage();
 
-  if (!activeData.length) {
-    insightsContainer.innerHTML = "<p style='color: #4d5a7a;'>No data available for this selection.</p>";
+  if (viewStateMessage) {
+    dom.insightCards.innerHTML = buildEmptyState(viewStateMessage);
     return;
   }
 
-  // Find top salary, most affordable, and best overall fit
-  const topSalary = [...activeData].sort((a, b) => b.salary - a.salary)[0];
-  
-  const topAffordable = [...activeData].sort(
-    (a, b) => affordabilityPercent(a.salary, a.rent) - affordabilityPercent(b.salary, b.rent)
-  )[0];
+  const activeRecords = getActiveRecords();
 
-  const bestFit = [...activeData].sort(
-    (a, b) => calculateCompositeScore(b) - calculateCompositeScore(a)
-  )[0];
+  if (!activeRecords.length) {
+    dom.insightCards.innerHTML = buildEmptyState(APP_CONFIG.copy.noResults);
+    return;
+  }
 
-  insightsContainer.innerHTML = `
-    <article class="insight-card">
-      <h3>Highest Salary</h3>
-      <p>${topSalary.city}, ${topSalary.state}</p>
-      <p style="font-size: 0.9rem; color: var(--accent);"><strong>$${topSalary.salary.toLocaleString()}</strong></p>
-    </article>
-    <article class="insight-card">
-      <h3>Most Affordable</h3>
-      <p>${topAffordable.city}, ${topAffordable.state}</p>
-      <p style="font-size: 0.9rem; color: var(--accent-2);"><strong>${affordabilityPercent(topAffordable.salary, topAffordable.rent).toFixed(1)}%</strong> income-to-rent</p>
-    </article>
-    <article class="insight-card">
-      <h3>Best Overall Fit</h3>
-      <p>${bestFit.city}, ${bestFit.state}</p>
-      <p style="font-size: 0.9rem; color: var(--accent-2);"><strong>${calculateCompositeScore(bestFit)}/100</strong> score</p>
-    </article>
-  `;
+  const insights = calculateInsights(activeRecords);
+
+  dom.insightCards.innerHTML = [
+    createInsightCardMarkup(
+      "Highest Salary",
+      insights.highestSalary.metro,
+      formatCurrency(insights.highestSalary.annual_mean_wage),
+      `${insights.highestSalary.bls_occupation} · ${formatNumber(insights.highestSalary.employment)} employed`
+    ),
+    createInsightCardMarkup(
+      "Strongest Market Concentration",
+      insights.strongestConcentration.metro,
+      `${insights.strongestConcentration.location_quotient.toFixed(2)} location quotient`,
+      `${formatCurrency(insights.strongestConcentration.annual_mean_wage)} annual mean wage`,
+      "accent-alt"
+    ),
+    createInsightCardMarkup(
+      "Best Overall Fit",
+      insights.bestOverallFit.metro,
+      `${insights.bestOverallFit.score.toFixed(2)} score`,
+      `${formatCurrency(insights.bestOverallFit.annual_mean_wage)} annual mean wage · ${formatNumber(insights.bestOverallFit.employment)} employed`,
+      "accent-alt"
+    )
+  ].join("");
 }
 
 function renderMapMarkers() {
   markerLayer.clearLayers();
-  const activeData = getActiveData();
+  appState.markerByMetro = {};
 
-  activeData.forEach(record => {
-    const score = calculateCompositeScore(record);
-    const color = getMarkerColor(score);
-    const opacity = appState.highlightedCity === `${record.city}, ${record.state}` ? 1 : 0.7;
+  getActiveRecords()
+    .filter(hasMapCoordinates)
+    .forEach((record) => {
+      const isHighlighted = appState.highlightedMetro === record.metro;
+      const markerColor = getMarkerColor(record.score);
+      const marker = L.circleMarker([record.lat, record.lng], {
+        radius: isHighlighted ? 12 : 8,
+        fillColor: markerColor,
+        color: isHighlighted ? "#1f2a44" : markerColor,
+        weight: isHighlighted ? 3 : 2,
+        opacity: 1,
+        fillOpacity: isHighlighted ? 1 : 0.75
+      });
 
-    const markerIcon = L.circleMarker([record.lat, record.lng], {
-      radius: appState.highlightedCity === `${record.city}, ${record.state}` ? 12 : 8,
-      fillColor: color,
-      color: appState.highlightedCity === `${record.city}, ${record.state}` ? "#000" : color,
-      weight: appState.highlightedCity === `${record.city}, ${record.state}` ? 3 : 2,
-      opacity: 1,
-      fillOpacity: opacity
+      marker.bindPopup(buildPopupHtml(record));
+      marker.addTo(markerLayer);
+      appState.markerByMetro[record.metro] = marker;
+
+      marker.on("click", () => {
+        setHighlightedMetro(record.metro, {
+          force: true,
+          panToMarker: false,
+          openPopup: false
+        });
+      });
     });
-
-    markerIcon.bindPopup(popupHtml(record));
-    markerIcon.addTo(markerLayer);
-
-    // Click event to highlight in city list
-    markerIcon.on('click', () => {
-      appState.highlightedCity = `${record.city}, ${record.state}`;
-      renderTopCities();
-      renderMapMarkers();
-    });
-  });
 }
 
-function populateMajorSelect() {
-  const majors = Object.keys(majorCareerData).sort();
-  majors.forEach(major => {
-    const option = document.createElement("option");
-    option.value = major;
-    option.textContent = major;
-    majorSelect.appendChild(option);
-  });
+function fitMapToRecords() {
+  const recordsWithCoordinates = getActiveRecords().filter(hasMapCoordinates);
+
+  if (!recordsWithCoordinates.length) {
+    map.setView(APP_CONFIG.map.defaultCenter, APP_CONFIG.map.defaultZoom);
+    return;
+  }
+
+  const bounds = L.latLngBounds(recordsWithCoordinates.map((record) => [record.lat, record.lng]));
+  map.fitBounds(bounds, { padding: APP_CONFIG.map.fitPadding });
 }
 
-function render() {
-  renderCareerPathButtons();
-  renderTopCities();
+function renderDataViews() {
   renderInsightCards();
+  renderTopCities();
   renderMapMarkers();
 }
 
-// Event listeners
-majorSelect.addEventListener("change", (e) => {
-  appState.selectedMajor = e.target.value;
-  appState.selectedRole = null;
-  appState.highlightedCity = null;
-  render();
-});
+function renderApp() {
+  renderCareerPathButtons();
+  renderDataViews();
+}
 
-// Initial render
-populateMajorSelect();
-render();
+function populateMajorSelect() {
+  Object.keys(APP_CONFIG.majorCareerPaths)
+    .sort()
+    .forEach((major) => {
+      const option = document.createElement("option");
+      option.value = major;
+      option.textContent = major;
+      dom.majorSelect.appendChild(option);
+    });
+}
+
+function initializeEventListeners() {
+  dom.majorSelect.addEventListener("change", (event) => {
+    handleMajorChange(event.target.value);
+  });
+}
+
+function initializeApp() {
+  populateMajorSelect();
+  initializeEventListeners();
+  renderApp();
+}
+
+initializeApp();

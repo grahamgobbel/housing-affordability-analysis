@@ -115,6 +115,14 @@ select {
   font-size: 0.9rem;
 }
 
+.insight-detail {
+  color: var(--accent);
+}
+
+.accent-alt {
+  color: var(--accent-2);
+}
+
 .map-panel {
   overflow: hidden;
 }
@@ -131,11 +139,6 @@ select {
 .popup-title {
   margin: 0 0 6px;
   font-size: 1rem;
-}
-
-.popup-line {
-  margin: 0;
-  font-size: 0.88rem;
 }
 
 .popup-line {
@@ -166,7 +169,7 @@ select {
   gap: 8px;
 }
 
-.role-button {
+.career-path-button {
   flex: 1;
   min-width: 140px;
   padding: 10px 12px;
@@ -182,12 +185,12 @@ select {
   text-align: center;
 }
 
-.role-button:hover {
+.career-path-button:hover {
   border-color: var(--accent);
   background: #fff5f4;
 }
 
-.role-button.active {
+.career-path-button.active {
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
@@ -266,6 +269,12 @@ select {
   padding: 4px 10px;
   border-radius: 20px;
   font-weight: 700;
+}
+
+.empty-state {
+  margin: 0;
+  color: #4d5a7a;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 940px) {
