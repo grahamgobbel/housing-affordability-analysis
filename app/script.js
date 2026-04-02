@@ -46,7 +46,10 @@ const APP_CONFIG = {
     ]
   },
   datasetBySelection: {
-    "BIS::Business / Strategy": "./data/business_strategy.json"
+    "BIS::Business / Strategy": "./data/business_strategy.json",
+    // Add one mapping entry like this whenever a new career path dataset is ready.
+    "BIS::Data / Analytics": "./data/data_analytics.json",
+    "BIS::Cybersecurity": "./data/cybersecurity.json"
   },
   copy: {
     selectMajor: "Select a major to see career paths.",
@@ -448,7 +451,7 @@ function renderInsightCards() {
       "Highest Salary",
       insights.highestSalary.metro,
       formatCurrency(insights.highestSalary.annual_mean_wage),
-      `${insights.highestSalary.bls_occupation} · ${formatNumber(insights.highestSalary.employment)} employed`
+      `${insights.highestSalary.bls_occupation} | ${formatNumber(insights.highestSalary.employment)} employed`
     ),
     createInsightCardMarkup(
       "Strongest Market Concentration",
@@ -461,7 +464,7 @@ function renderInsightCards() {
       "Best Overall Fit",
       insights.bestOverallFit.metro,
       `${insights.bestOverallFit.score.toFixed(2)} score`,
-      `${formatCurrency(insights.bestOverallFit.annual_mean_wage)} annual mean wage · ${formatNumber(insights.bestOverallFit.employment)} employed`,
+      `${formatCurrency(insights.bestOverallFit.annual_mean_wage)} annual mean wage | ${formatNumber(insights.bestOverallFit.employment)} employed`,
       "accent-alt"
     )
   ].join("");
@@ -546,3 +549,4 @@ function initializeApp() {
 }
 
 initializeApp();
+
