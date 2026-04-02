@@ -1,0 +1,50 @@
+[
+  {
+    "career_path": "Product / Innovation",
+    "bls_occupation": "Project Management Specialists",
+    "metro": "San Francisco-Oakland-Hayward, CA",
+    "employment": 14210,
+    "location_quotient": 1.44,
+    "annual_mean_wage": 124210,
+    "hourly_mean_wage": 59.72,
+    "score": 0.95,
+    "lat": 37.7749,
+    "lng": -122.4194
+  },
+  {
+    "career_path": "Product / Innovation",
+    "bls_occupation": "Project Management Specialists",
+    "metro": "Seattle-Tacoma-Bellevue, WA",
+    "employment": 13240,
+    "location_quotient": 1.52,
+    "annual_mean_wage": 118420,
+    "hourly_mean_wage": 56.94,
+    "score": 0.94,
+    "lat": 47.6062,
+    "lng": -122.3321
+  },
+  {
+    "career_path": "Product / Innovation",
+    "bls_occupation": "Project Management Specialists",
+    "metro": "Austin-Round Rock-Georgetown, TX",
+    "employment": 10840,
+    "location_quotient": 1.39,
+    "annual_mean_wage": 109230,
+    "hourly_mean_wage": 52.52,
+    "score": 0.92,
+    "lat": 30.2672,
+    "lng": -97.7431
+  },
+  {
+    "career_path": "Product / Innovation",
+    "bls_occupation": "Project Management Specialists",
+    "metro": "Boston-Cambridge-Newton, MA-NH",
+    "employment": 9840,
+    "location_quotient": 1.36,
+    "annual_mean_wage": 114870,
+    "hourly_mean_wage": 55.22,
+    "score": 0.93,
+    "lat": 42.3601,
+    "lng": -71.0589
+  }
+]

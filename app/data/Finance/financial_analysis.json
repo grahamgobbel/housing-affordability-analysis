@@ -1,0 +1,122 @@
+[
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "New York-Newark-Jersey City, NY-NJ-PA",
+    "employment": 57840,
+    "location_quotient": 1.85,
+    "annual_mean_wage": 139210,
+    "hourly_mean_wage": 66.93,
+    "score": 0.97,
+    "lat": 40.7128,
+    "lng": -74.0060
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "San Francisco-Oakland-Hayward, CA",
+    "employment": 18320,
+    "location_quotient": 1.92,
+    "annual_mean_wage": 151840,
+    "hourly_mean_wage": 72.99,
+    "score": 0.95,
+    "lat": 37.7749,
+    "lng": -122.4194
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "Boston-Cambridge-Newton, MA-NH",
+    "employment": 16240,
+    "location_quotient": 1.78,
+    "annual_mean_wage": 141620,
+    "hourly_mean_wage": 68.09,
+    "score": 0.93,
+    "lat": 42.3601,
+    "lng": -71.0589
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "Chicago-Naperville-Elgin, IL-IN-WI",
+    "employment": 21480,
+    "location_quotient": 1.22,
+    "annual_mean_wage": 112430,
+    "hourly_mean_wage": 54.05,
+    "score": 0.88,
+    "lat": 41.8781,
+    "lng": -87.6298
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "Dallas-Fort Worth-Arlington, TX",
+    "employment": 18720,
+    "location_quotient": 1.15,
+    "annual_mean_wage": 105980,
+    "hourly_mean_wage": 50.95,
+    "score": 0.86,
+    "lat": 32.7767,
+    "lng": -96.7970
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "Charlotte-Concord-Gastonia, NC-SC",
+    "employment": 13240,
+    "location_quotient": 1.74,
+    "annual_mean_wage": 111820,
+    "hourly_mean_wage": 53.76,
+    "score": 0.89,
+    "lat": 35.2271,
+    "lng": -80.8431
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "Atlanta-Sandy Springs-Alpharetta, GA",
+    "employment": 14980,
+    "location_quotient": 1.21,
+    "annual_mean_wage": 108340,
+    "hourly_mean_wage": 52.09,
+    "score": 0.87,
+    "lat": 33.7490,
+    "lng": -84.3880
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "Los Angeles-Long Beach-Anaheim, CA",
+    "employment": 17620,
+    "location_quotient": 1.08,
+    "annual_mean_wage": 116520,
+    "hourly_mean_wage": 56.02,
+    "score": 0.87,
+    "lat": 34.0522,
+    "lng": -118.2437
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "Denver-Aurora-Lakewood, CO",
+    "employment": 9840,
+    "location_quotient": 1.26,
+    "annual_mean_wage": 110210,
+    "hourly_mean_wage": 52.99,
+    "score": 0.86,
+    "lat": 39.7392,
+    "lng": -104.9903
+  },
+  {
+    "career_path": "Financial Analysis",
+    "bls_occupation": "Financial Analysts",
+    "metro": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+    "employment": 12850,
+    "location_quotient": 1.33,
+    "annual_mean_wage": 120870,
+    "hourly_mean_wage": 58.11,
+    "score": 0.90,
+    "lat": 38.9072,
+    "lng": -77.0369
+  }
+]

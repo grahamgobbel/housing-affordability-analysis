@@ -1,0 +1,50 @@
+[
+  {
+    "career_path": "Growth / Marketing",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "San Francisco-Oakland-Hayward, CA",
+    "employment": 48320,
+    "location_quotient": 1.52,
+    "annual_mean_wage": 121430,
+    "hourly_mean_wage": 58.38,
+    "score": 0.95,
+    "lat": 37.7749,
+    "lng": -122.4194
+  },
+  {
+    "career_path": "Growth / Marketing",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "New York-Newark-Jersey City, NY-NJ-PA",
+    "employment": 102840,
+    "location_quotient": 1.28,
+    "annual_mean_wage": 104320,
+    "hourly_mean_wage": 50.15,
+    "score": 0.93,
+    "lat": 40.7128,
+    "lng": -74.0060
+  },
+  {
+    "career_path": "Growth / Marketing",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Los Angeles-Long Beach-Anaheim, CA",
+    "employment": 78210,
+    "location_quotient": 1.35,
+    "annual_mean_wage": 98340,
+    "hourly_mean_wage": 47.28,
+    "score": 0.92,
+    "lat": 34.0522,
+    "lng": -118.2437
+  },
+  {
+    "career_path": "Growth / Marketing",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Austin-Round Rock-Georgetown, TX",
+    "employment": 41230,
+    "location_quotient": 1.41,
+    "annual_mean_wage": 97240,
+    "hourly_mean_wage": 46.75,
+    "score": 0.91,
+    "lat": 30.2672,
+    "lng": -97.7431
+  }
+]

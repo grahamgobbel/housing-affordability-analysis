@@ -1,0 +1,50 @@
+[
+  {
+    "career_path": "Human Resources",
+    "bls_occupation": "Human Resources Specialists",
+    "metro": "New York-Newark-Jersey City, NY-NJ-PA",
+    "employment": 48240,
+    "location_quotient": 1.18,
+    "annual_mean_wage": 79240,
+    "hourly_mean_wage": 38.10,
+    "score": 0.92,
+    "lat": 40.7128,
+    "lng": -74.0060
+  },
+  {
+    "career_path": "Human Resources",
+    "bls_occupation": "Human Resources Specialists",
+    "metro": "Los Angeles-Long Beach-Anaheim, CA",
+    "employment": 39820,
+    "location_quotient": 1.12,
+    "annual_mean_wage": 76240,
+    "hourly_mean_wage": 36.65,
+    "score": 0.90,
+    "lat": 34.0522,
+    "lng": -118.2437
+  },
+  {
+    "career_path": "Human Resources",
+    "bls_occupation": "Human Resources Specialists",
+    "metro": "Chicago-Naperville-Elgin, IL-IN-WI",
+    "employment": 36420,
+    "location_quotient": 1.15,
+    "annual_mean_wage": 74210,
+    "hourly_mean_wage": 35.68,
+    "score": 0.89,
+    "lat": 41.8781,
+    "lng": -87.6298
+  },
+  {
+    "career_path": "Human Resources",
+    "bls_occupation": "Human Resources Specialists",
+    "metro": "Dallas-Fort Worth-Arlington, TX",
+    "employment": 34210,
+    "location_quotient": 1.17,
+    "annual_mean_wage": 72140,
+    "hourly_mean_wage": 34.68,
+    "score": 0.88,
+    "lat": 32.7767,
+    "lng": -96.7970
+  }
+]

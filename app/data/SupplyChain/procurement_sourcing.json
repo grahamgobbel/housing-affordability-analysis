@@ -1,0 +1,62 @@
+[
+  {
+    "career_path": "Procurement / Sourcing",
+    "bls_occupation": "Purchasing Agents",
+    "metro": "Chicago-Naperville-Elgin, IL-IN-WI",
+    "employment": 8420,
+    "location_quotient": 1.34,
+    "annual_mean_wage": 82340,
+    "hourly_mean_wage": 39.59,
+    "score": 0.92,
+    "lat": 41.8781,
+    "lng": -87.6298
+  },
+  {
+    "career_path": "Procurement / Sourcing",
+    "bls_occupation": "Purchasing Agents",
+    "metro": "Dallas-Fort Worth-Arlington, TX",
+    "employment": 7840,
+    "location_quotient": 1.29,
+    "annual_mean_wage": 79840,
+    "hourly_mean_wage": 38.38,
+    "score": 0.91,
+    "lat": 32.7767,
+    "lng": -96.7970
+  },
+  {
+    "career_path": "Procurement / Sourcing",
+    "bls_occupation": "Purchasing Agents",
+    "metro": "Detroit-Warren-Dearborn, MI",
+    "employment": 7420,
+    "location_quotient": 1.58,
+    "annual_mean_wage": 81240,
+    "hourly_mean_wage": 39.06,
+    "score": 0.91,
+    "lat": 42.3314,
+    "lng": -83.0458
+  },
+  {
+    "career_path": "Procurement / Sourcing",
+    "bls_occupation": "Purchasing Agents",
+    "metro": "Atlanta-Sandy Springs-Alpharetta, GA",
+    "employment": 6980,
+    "location_quotient": 1.21,
+    "annual_mean_wage": 77240,
+    "hourly_mean_wage": 37.13,
+    "score": 0.89,
+    "lat": 33.7490,
+    "lng": -84.3880
+  },
+  {
+    "career_path": "Procurement / Sourcing",
+    "bls_occupation": "Purchasing Agents",
+    "metro": "Houston-The Woodlands-Sugar Land, TX",
+    "employment": 6540,
+    "location_quotient": 1.25,
+    "annual_mean_wage": 78420,
+    "hourly_mean_wage": 37.70,
+    "score": 0.89,
+    "lat": 29.7604,
+    "lng": -95.3698
+  }
+]

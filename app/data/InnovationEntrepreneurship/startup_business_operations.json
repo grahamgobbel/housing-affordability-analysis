@@ -1,0 +1,50 @@
+[
+  {
+    "career_path": "Startup / Business Operations",
+    "bls_occupation": "Management Analysts",
+    "metro": "San Francisco-Oakland-Hayward, CA",
+    "employment": 15600,
+    "location_quotient": 1.22,
+    "annual_mean_wage": 128200,
+    "hourly_mean_wage": 61.63,
+    "score": 0.96,
+    "lat": 37.7749,
+    "lng": -122.4194
+  },
+  {
+    "career_path": "Startup / Business Operations",
+    "bls_occupation": "Management Analysts",
+    "metro": "New York-Newark-Jersey City, NY-NJ-PA",
+    "employment": 41250,
+    "location_quotient": 1.05,
+    "annual_mean_wage": 119830,
+    "hourly_mean_wage": 57.61,
+    "score": 0.93,
+    "lat": 40.7128,
+    "lng": -74.0060
+  },
+  {
+    "career_path": "Startup / Business Operations",
+    "bls_occupation": "Management Analysts",
+    "metro": "Austin-Round Rock-Georgetown, TX",
+    "employment": 9820,
+    "location_quotient": 1.48,
+    "annual_mean_wage": 112430,
+    "hourly_mean_wage": 54.05,
+    "score": 0.94,
+    "lat": 30.2672,
+    "lng": -97.7431
+  },
+  {
+    "career_path": "Startup / Business Operations",
+    "bls_occupation": "Management Analysts",
+    "metro": "Seattle-Tacoma-Bellevue, WA",
+    "employment": 11840,
+    "location_quotient": 1.21,
+    "annual_mean_wage": 120300,
+    "hourly_mean_wage": 57.83,
+    "score": 0.93,
+    "lat": 47.6062,
+    "lng": -122.3321
+  }
+]

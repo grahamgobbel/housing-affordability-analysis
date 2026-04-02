@@ -1,0 +1,122 @@
+[
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "San Francisco-Oakland-Hayward, CA",
+    "employment": 18730,
+    "location_quotient": 2.12,
+    "annual_mean_wage": 161870,
+    "hourly_mean_wage": 77.82,
+    "score": 0.96,
+    "lat": 37.7749,
+    "lng": -122.4194
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "Seattle-Tacoma-Bellevue, WA",
+    "employment": 13240,
+    "location_quotient": 1.94,
+    "annual_mean_wage": 153960,
+    "hourly_mean_wage": 74.02,
+    "score": 0.93,
+    "lat": 47.6062,
+    "lng": -122.3321
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "New York-Newark-Jersey City, NY-NJ-PA",
+    "employment": 22310,
+    "location_quotient": 1.33,
+    "annual_mean_wage": 147230,
+    "hourly_mean_wage": 70.78,
+    "score": 0.91,
+    "lat": 40.7128,
+    "lng": -74.006
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+    "employment": 15810,
+    "location_quotient": 1.72,
+    "annual_mean_wage": 150870,
+    "hourly_mean_wage": 72.54,
+    "score": 0.92,
+    "lat": 38.9072,
+    "lng": -77.0369
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "Boston-Cambridge-Newton, MA-NH",
+    "employment": 11840,
+    "location_quotient": 1.79,
+    "annual_mean_wage": 148540,
+    "hourly_mean_wage": 71.42,
+    "score": 0.9,
+    "lat": 42.3601,
+    "lng": -71.0589
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "Austin-Round Rock-Georgetown, TX",
+    "employment": 8450,
+    "location_quotient": 1.65,
+    "annual_mean_wage": 140320,
+    "hourly_mean_wage": 67.46,
+    "score": 0.87,
+    "lat": 30.2672,
+    "lng": -97.7431
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "Dallas-Fort Worth-Arlington, TX",
+    "employment": 10480,
+    "location_quotient": 1.2,
+    "annual_mean_wage": 135110,
+    "hourly_mean_wage": 64.95,
+    "score": 0.83,
+    "lat": 32.7767,
+    "lng": -96.797
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "Chicago-Naperville-Elgin, IL-IN-WI",
+    "employment": 9820,
+    "location_quotient": 1.04,
+    "annual_mean_wage": 131980,
+    "hourly_mean_wage": 63.45,
+    "score": 0.8,
+    "lat": 41.8781,
+    "lng": -87.6298
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "Denver-Aurora-Lakewood, CO",
+    "employment": 7380,
+    "location_quotient": 1.42,
+    "annual_mean_wage": 137420,
+    "hourly_mean_wage": 66.07,
+    "score": 0.85,
+    "lat": 39.7392,
+    "lng": -104.9903
+  },
+  {
+    "career_path": "Data / Analytics",
+    "bls_occupation": "Data Scientists",
+    "metro": "Atlanta-Sandy Springs-Alpharetta, GA",
+    "employment": 8150,
+    "location_quotient": 1.16,
+    "annual_mean_wage": 129870,
+    "hourly_mean_wage": 62.44,
+    "score": 0.79,
+    "lat": 33.749,
+    "lng": -84.388
+  }
+]

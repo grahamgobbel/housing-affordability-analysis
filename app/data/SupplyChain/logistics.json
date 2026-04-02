@@ -1,0 +1,87 @@
+[
+  {
+    "career_path": "Logistics",
+    "bls_occupation": "Logisticians",
+    "metro": "Dallas-Fort Worth-Arlington, TX",
+    "employment": 10420,
+    "location_quotient": 1.48,
+    "annual_mean_wage": 85640,
+    "hourly_mean_wage": 41.17,
+    "score": 0.94,
+    "lat": 32.7767,
+    "lng": -96.7970
+  },
+  {
+    "career_path": "Logistics",
+    "bls_occupation": "Logisticians",
+    "metro": "Atlanta-Sandy Springs-Alpharetta, GA",
+    "employment": 9820,
+    "location_quotient": 1.52,
+    "annual_mean_wage": 84210,
+    "hourly_mean_wage": 40.49,
+    "score": 0.93,
+    "lat": 33.7490,
+    "lng": -84.3880
+  },
+  {
+    "career_path": "Logistics",
+    "bls_occupation": "Logisticians",
+    "metro": "Chicago-Naperville-Elgin, IL-IN-WI",
+    "employment": 8650,
+    "location_quotient": 1.26,
+    "annual_mean_wage": 81240,
+    "hourly_mean_wage": 39.06,
+    "score": 0.91,
+    "lat": 41.8781,
+    "lng": -87.6298
+  },
+  {
+    "career_path": "Logistics",
+    "bls_occupation": "Logisticians",
+    "metro": "Houston-The Woodlands-Sugar Land, TX",
+    "employment": 7920,
+    "location_quotient": 1.41,
+    "annual_mean_wage": 82340,
+    "hourly_mean_wage": 39.59,
+    "score": 0.91,
+    "lat": 29.7604,
+    "lng": -95.3698
+  },
+  {
+    "career_path": "Logistics",
+    "bls_occupation": "Logisticians",
+    "metro": "Los Angeles-Long Beach-Anaheim, CA",
+    "employment": 7540,
+    "location_quotient": 1.22,
+    "annual_mean_wage": 87420,
+    "hourly_mean_wage": 42.03,
+    "score": 0.92,
+    "lat": 34.0522,
+    "lng": -118.2437
+  },
+  {
+    "career_path": "Logistics",
+    "bls_occupation": "Logisticians",
+    "metro": "Memphis, TN-MS-AR",
+    "employment": 4320,
+    "location_quotient": 1.78,
+    "annual_mean_wage": 76840,
+    "hourly_mean_wage": 36.94,
+    "score": 0.90,
+    "lat": 35.1495,
+    "lng": -90.0490
+  },
+  {
+    "career_path": "Logistics",
+    "bls_occupation": "Logisticians",
+    "metro": "Louisville/Jefferson County, KY-IN",
+    "employment": 3980,
+    "location_quotient": 1.72,
+    "annual_mean_wage": 75420,
+    "hourly_mean_wage": 36.26,
+    "score": 0.89,
+    "lat": 38.2527,
+    "lng": -85.7585
+  }
+]
+

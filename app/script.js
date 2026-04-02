@@ -1,6 +1,14 @@
 // Central app configuration lives here so future datasets can be added
-// without touching the rendering logic. To wire a new career path later,
-// add a JSON file and one DATASET_BY_SELECTION entry below.
+// without touching the rendering logic.
+//
+// There are three parts to the setup:
+// 1. majorCareerPaths -> controls which majors and career paths appear in the UI
+// 2. majorFolderMap -> tells the app which folder each major uses inside /data
+// 3. datasetFileMap -> maps each career path to a JSON file name inside that folder
+//
+// To add a new dataset later:
+// - drop the JSON file into the correct major folder
+// - add one filename entry in datasetFileMap for that major/career path
 const APP_CONFIG = {
   majorCareerPaths: {
     Finance: [
@@ -20,7 +28,7 @@ const APP_CONFIG = {
       "Advertising / Campaign Strategy",
       "Sales / Client Strategy"
     ],
-    BIS: [
+    "Business Information Systems (BIS)": [
       "Business / Strategy",
       "Data / Analytics",
       "Cybersecurity",
@@ -45,11 +53,58 @@ const APP_CONFIG = {
       "Sales / Business Development"
     ]
   },
-  datasetBySelection: {
-    "BIS::Business / Strategy": "./data/business_strategy.json",
-    // Add one mapping entry like this whenever a new career path dataset is ready.
-    "BIS::Data / Analytics": "./data/data_analytics.json",
-    "BIS::Cybersecurity": "./data/cybersecurity.json"
+  // Folder names stay filesystem-friendly even when UI labels use spaces or symbols.
+  majorFolderMap: {
+    Finance: "Finance",
+    Accounting: "Accounting",
+    Marketing: "Marketing",
+    "Business Information Systems (BIS)": "BIS",
+    "Supply Chain": "SupplyChain",
+    Management: "Management",
+    "Innovation & Entrepreneurship": "InnovationEntrepreneurship"
+  },
+  datasetFileMap: {
+    Finance: {
+      "Financial Analysis": "financial_analysis.json",
+      "Credit & Lending": "credit_lending.json",
+      "Financial Advising": "financial_advising.json",
+      "Risk & Compliance": "risk_compliance.json"
+    },
+    Accounting: {
+      "Accounting / Audit": "accounting_audit.json",
+      "Financial Analysis (Accounting Track)": "financial_analysis_accounting_track.json",
+      "Risk / Compliance": "risk_compliance.json"
+    },
+    Marketing: {
+      "Market Research / Analytics": "market_research_analytics.json",
+      "Public Relations": "public_relations.json",
+      "Advertising / Campaign Strategy": "advertising_campaign_strategy.json",
+      "Sales / Client Strategy": "sales_client_strategy.json"
+    },
+    "Business Information Systems (BIS)": {
+      "Business / Strategy": "business_strategy.json",
+      "Data / Analytics": "data_analytics.json",
+      "Cybersecurity": "cybersecurity.json",
+      "Systems / IT": "systems_it.json"
+    },
+    "Supply Chain": {
+      "Logistics": "logistics.json",
+      "Procurement / Sourcing": "procurement_sourcing.json",
+      "Operations / Planning": "operations_planning.json",
+      "Transportation / Distribution": "transportation_distribution.json"
+    },
+    Management: {
+      "Business Operations": "business_operations.json",
+      "Project Management": "project_management.json",
+      "Human Resources": "human_resources.json",
+      "Sales / Business Development": "sales_business_development.json"
+    },
+    "Innovation & Entrepreneurship": {
+      "Startup / Business Operations": "startup_business_operations.json",
+      "Product / Innovation": "product_innovation.json",
+      "Growth / Marketing": "growth_marketing.json",
+      "Sales / Business Development": "sales_business_development.json"
+    }
   },
   copy: {
     selectMajor: "Select a major to see career paths.",
@@ -113,12 +168,16 @@ function formatNumber(value, maximumFractionDigits = 0) {
   }).format(value);
 }
 
-function createSelectionKey(major, careerPath) {
-  return `${major}::${careerPath}`;
-}
-
 function getCareerPathsForMajor(major) {
   return APP_CONFIG.majorCareerPaths[major] || [];
+}
+
+function getMajorFolderName(major) {
+  return APP_CONFIG.majorFolderMap[major] || null;
+}
+
+function getDatasetFileName(major, careerPath) {
+  return APP_CONFIG.datasetFileMap[major]?.[careerPath] || null;
 }
 
 function getDatasetPath(major, careerPath) {
@@ -126,7 +185,17 @@ function getDatasetPath(major, careerPath) {
     return null;
   }
 
-  return APP_CONFIG.datasetBySelection[createSelectionKey(major, careerPath)] || null;
+  const folderName = getMajorFolderName(major);
+  const fileName = getDatasetFileName(major, careerPath);
+
+  if (!folderName || !fileName) {
+    return null;
+  }
+
+  // Example results:
+  // ./data/BIS/data_analytics.json
+  // ./data/Finance/financial_analysis.json
+  return `./data/${folderName}/${fileName}`;
 }
 
 function buildEmptyState(message) {
@@ -248,8 +317,8 @@ function getTopMetros(records, limit = APP_CONFIG.map.topCityLimit) {
 
 // Quick Snapshot calculations:
 // 1. Highest Salary -> largest annual_mean_wage
-// 2. Strongest Market Concentration -> largest location_quotient
-// 3. Best Overall Fit -> largest score
+// 2. Highest Location Quotient -> largest location_quotient
+// 3. Best Overall Score -> largest score
 function calculateInsights(records) {
   return {
     highestSalary: getSortedRecords(records, "annual_mean_wage")[0],
@@ -289,11 +358,8 @@ function buildPopupHtml(record) {
   return `
     <div class="popup-content">
       <h3 class="popup-title">${record.metro}</h3>
-      <p class="popup-line"><strong>Career Path:</strong> ${record.career_path}</p>
-      <p class="popup-line"><strong>BLS Occupation:</strong> ${record.bls_occupation}</p>
+      <!-- Keep the popup focused on the four fields requested for the map. -->
       <p class="popup-line"><strong>Annual Mean Wage:</strong> ${formatCurrency(record.annual_mean_wage)}</p>
-      <p class="popup-line"><strong>Hourly Mean Wage:</strong> ${formatCurrency(record.hourly_mean_wage, 2)}</p>
-      <p class="popup-line"><strong>Employment:</strong> ${formatNumber(record.employment)}</p>
       <p class="popup-line"><strong>Location Quotient:</strong> ${record.location_quotient.toFixed(2)}</p>
       <p class="popup-line"><strong>Overall Score:</strong> ${record.score.toFixed(2)}</p>
     </div>
@@ -454,14 +520,14 @@ function renderInsightCards() {
       `${insights.highestSalary.bls_occupation} | ${formatNumber(insights.highestSalary.employment)} employed`
     ),
     createInsightCardMarkup(
-      "Strongest Market Concentration",
+      "Highest Location Quotient",
       insights.strongestConcentration.metro,
       `${insights.strongestConcentration.location_quotient.toFixed(2)} location quotient`,
       `${formatCurrency(insights.strongestConcentration.annual_mean_wage)} annual mean wage`,
       "accent-alt"
     ),
     createInsightCardMarkup(
-      "Best Overall Fit",
+      "Best Overall Score",
       insights.bestOverallFit.metro,
       `${insights.bestOverallFit.score.toFixed(2)} score`,
       `${formatCurrency(insights.bestOverallFit.annual_mean_wage)} annual mean wage | ${formatNumber(insights.bestOverallFit.employment)} employed`,

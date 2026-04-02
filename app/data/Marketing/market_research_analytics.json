@@ -1,0 +1,122 @@
+[
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "New York-Newark-Jersey City, NY-NJ-PA",
+    "employment": 102840,
+    "location_quotient": 1.28,
+    "annual_mean_wage": 104320,
+    "hourly_mean_wage": 50.15,
+    "score": 0.96,
+    "lat": 40.7128,
+    "lng": -74.0060
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Los Angeles-Long Beach-Anaheim, CA",
+    "employment": 78210,
+    "location_quotient": 1.35,
+    "annual_mean_wage": 98340,
+    "hourly_mean_wage": 47.28,
+    "score": 0.94,
+    "lat": 34.0522,
+    "lng": -118.2437
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Chicago-Naperville-Elgin, IL-IN-WI",
+    "employment": 65420,
+    "location_quotient": 1.22,
+    "annual_mean_wage": 87210,
+    "hourly_mean_wage": 41.93,
+    "score": 0.91,
+    "lat": 41.8781,
+    "lng": -87.6298
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "San Francisco-Oakland-Hayward, CA",
+    "employment": 48320,
+    "location_quotient": 1.52,
+    "annual_mean_wage": 121430,
+    "hourly_mean_wage": 58.38,
+    "score": 0.95,
+    "lat": 37.7749,
+    "lng": -122.4194
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Dallas-Fort Worth-Arlington, TX",
+    "employment": 57210,
+    "location_quotient": 1.18,
+    "annual_mean_wage": 83210,
+    "hourly_mean_wage": 40.00,
+    "score": 0.90,
+    "lat": 32.7767,
+    "lng": -96.7970
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Atlanta-Sandy Springs-Alpharetta, GA",
+    "employment": 51840,
+    "location_quotient": 1.26,
+    "annual_mean_wage": 82140,
+    "hourly_mean_wage": 39.49,
+    "score": 0.89,
+    "lat": 33.7490,
+    "lng": -84.3880
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Boston-Cambridge-Newton, MA-NH",
+    "employment": 42180,
+    "location_quotient": 1.41,
+    "annual_mean_wage": 102870,
+    "hourly_mean_wage": 49.46,
+    "score": 0.93,
+    "lat": 42.3601,
+    "lng": -71.0589
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Seattle-Tacoma-Bellevue, WA",
+    "employment": 36820,
+    "location_quotient": 1.39,
+    "annual_mean_wage": 109240,
+    "hourly_mean_wage": 52.52,
+    "score": 0.93,
+    "lat": 47.6062,
+    "lng": -122.3321
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Miami-Fort Lauderdale-West Palm Beach, FL",
+    "employment": 34210,
+    "location_quotient": 1.33,
+    "annual_mean_wage": 79120,
+    "hourly_mean_wage": 38.04,
+    "score": 0.88,
+    "lat": 25.7617,
+    "lng": -80.1918
+  },
+  {
+    "career_path": "Market Research / Analytics",
+    "bls_occupation": "Market Research Analysts and Marketing Specialists",
+    "metro": "Denver-Aurora-Lakewood, CO",
+    "employment": 28740,
+    "location_quotient": 1.29,
+    "annual_mean_wage": 86430,
+    "hourly_mean_wage": 41.56,
+    "score": 0.89,
+    "lat": 39.7392,
+    "lng": -104.9903
+  }
+]

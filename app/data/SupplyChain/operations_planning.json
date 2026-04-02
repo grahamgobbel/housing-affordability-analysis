@@ -1,0 +1,50 @@
+[
+  {
+    "career_path": "Operations / Planning",
+    "bls_occupation": "Production, Planning, and Expediting Clerks",
+    "metro": "Chicago-Naperville-Elgin, IL-IN-WI",
+    "employment": 12480,
+    "location_quotient": 1.42,
+    "annual_mean_wage": 58240,
+    "hourly_mean_wage": 28.00,
+    "score": 0.92,
+    "lat": 41.8781,
+    "lng": -87.6298
+  },
+  {
+    "career_path": "Operations / Planning",
+    "bls_occupation": "Production, Planning, and Expediting Clerks",
+    "metro": "Dallas-Fort Worth-Arlington, TX",
+    "employment": 11340,
+    "location_quotient": 1.36,
+    "annual_mean_wage": 56240,
+    "hourly_mean_wage": 27.04,
+    "score": 0.91,
+    "lat": 32.7767,
+    "lng": -96.7970
+  },
+  {
+    "career_path": "Operations / Planning",
+    "bls_occupation": "Production, Planning, and Expediting Clerks",
+    "metro": "Los Angeles-Long Beach-Anaheim, CA",
+    "employment": 10920,
+    "location_quotient": 1.28,
+    "annual_mean_wage": 60210,
+    "hourly_mean_wage": 28.94,
+    "score": 0.91,
+    "lat": 34.0522,
+    "lng": -118.2437
+  },
+  {
+    "career_path": "Operations / Planning",
+    "bls_occupation": "Production, Planning, and Expediting Clerks",
+    "metro": "Houston-The Woodlands-Sugar Land, TX",
+    "employment": 10240,
+    "location_quotient": 1.31,
+    "annual_mean_wage": 57240,
+    "hourly_mean_wage": 27.52,
+    "score": 0.90,
+    "lat": 29.7604,
+    "lng": -95.3698
+  }
+]
