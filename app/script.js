@@ -128,6 +128,7 @@ const appState = {
   selectedMajor: "All",
   selectedCareerPath: null,
   highlightedMetro: null,
+  allRecords: [],
   records: [],
   datasetCache: {},
   markerByMetro: {},
@@ -209,8 +210,10 @@ function hasMapCoordinates(record) {
 // This is the only place that knows the incoming data shape.
 // When you swap in real BLS/Census files later, updating this mapper
 // should be enough to keep the UI layer unchanged.
-function normalizeRecord(record) {
+function normalizeRecord(record, major, careerPath) {
   return {
+    source_major: major,
+    source_career_path: careerPath,
     career_path: record.career_path || "",
     bls_occupation: record.bls_occupation || "",
     metro: record.metro || "Unknown metro",
@@ -229,6 +232,61 @@ function resetDataState() {
   appState.highlightedMetro = null;
   appState.loading = false;
   appState.error = "";
+}
+
+function getDatasetSelections(major) {
+  const fileMapForMajor = APP_CONFIG.datasetFileMap[major] || {};
+
+  return Object.keys(fileMapForMajor).map((careerPath) => ({
+    major,
+    careerPath
+  }));
+}
+
+function getAllDatasetSelections() {
+  return Object.keys(APP_CONFIG.datasetFileMap).flatMap(getDatasetSelections);
+}
+
+async function fetchDatasetRecords(major, careerPath) {
+  const datasetPath = getDatasetPath(major, careerPath);
+
+  if (!datasetPath) {
+    return [];
+  }
+
+  if (appState.datasetCache[datasetPath]) {
+    return appState.datasetCache[datasetPath];
+  }
+
+  const response = await fetch(datasetPath);
+
+  if (!response.ok) {
+    throw new Error(`Request failed with status ${response.status}`);
+  }
+
+  const json = await response.json();
+  const normalizedRecords = Array.isArray(json)
+    ? json.map((record) => normalizeRecord(record, major, careerPath))
+    : [];
+
+  appState.datasetCache[datasetPath] = normalizedRecords;
+  return normalizedRecords;
+}
+
+// Preload every mapped dataset once so the map can show locations across the
+// full project instead of only the currently selected career path.
+async function preloadAllDatasets() {
+  try {
+    const datasetGroups = await Promise.all(
+      getAllDatasetSelections().map(({ major, careerPath }) => fetchDatasetRecords(major, careerPath))
+    );
+
+    appState.allRecords = datasetGroups.flat();
+    renderMapMarkers();
+    fitMapToRecords();
+  } catch (error) {
+    console.error("Failed to preload map datasets:", error);
+  }
 }
 
 function handleMajorChange(nextMajor) {
@@ -274,17 +332,7 @@ async function loadCareerPathData(major, careerPath) {
   renderDataViews();
 
   try {
-    const response = await fetch(datasetPath);
-
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}`);
-    }
-
-    const json = await response.json();
-    const normalizedRecords = Array.isArray(json) ? json.map(normalizeRecord) : [];
-
-    appState.datasetCache[datasetPath] = normalizedRecords;
-    appState.records = normalizedRecords;
+    appState.records = await fetchDatasetRecords(major, careerPath);
   } catch (error) {
     console.error("Failed to load dataset:", error);
     appState.records = [];
@@ -302,6 +350,23 @@ function getActiveRecords() {
   }
 
   return appState.records.filter((record) => record.career_path === appState.selectedCareerPath);
+}
+
+// The side-panel views stay focused on the current career path, but the map
+// can use a wider slice of the data:
+// - no markers until a major is selected
+// - all career paths for one major after major selection
+// - one career path after career path selection
+function getMapRecords() {
+  if (appState.selectedCareerPath) {
+    return getActiveRecords();
+  }
+
+  if (appState.selectedMajor !== "All") {
+    return appState.allRecords.filter((record) => record.source_major === appState.selectedMajor);
+  }
+
+  return [];
 }
 
 function getSortedRecords(records, field) {
@@ -348,18 +413,77 @@ function getViewStateMessage() {
 }
 
 function getMarkerColor(score) {
-  if (score >= 0.9) return "#247ba0";
-  if (score >= 0.8) return "#2ab7ca";
-  if (score >= 0.7) return "#52b788";
-  return "#ffb703";
+  if (score >= 0.9) return "#4d1979";
+  if (score >= 0.8) return "#6d2fa1";
+  if (score >= 0.7) return "#8f5bc2";
+  return "#b999db";
+}
+
+function createStarMarkerIcon(fillColor, isHighlighted) {
+  const size = isHighlighted ? 28 : 24;
+  const strokeColor = isHighlighted ? "#24153d" : "#4d1979";
+  const strokeWidth = isHighlighted ? 2.5 : 2;
+
+  return L.divIcon({
+    className: "star-marker-icon",
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+    popupAnchor: [0, -size / 2],
+    html: `
+      <svg width="${size}" height="${size}" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M12 1.8l3.12 6.31 6.96 1.01-5.04 4.91 1.19 6.93L12 17.67 5.77 20.96l1.19-6.93L1.92 9.12l6.96-1.01L12 1.8z"
+          fill="${fillColor}"
+          stroke="${strokeColor}"
+          stroke-width="${strokeWidth}"
+          stroke-linejoin="round"
+        />
+      </svg>
+    `
+  });
+}
+
+function createRecordKey(record) {
+  return [
+    record.bls_occupation,
+    record.metro,
+    record.score,
+    record.lat,
+    record.lng
+  ].join("::");
+}
+
+// Find the highest-scoring location for each occupation in the current
+// map view so those markers can stand out visually.
+function getTopOccupationRecordKeys(records) {
+  const bestRecordByOccupation = {};
+
+  records.forEach((record) => {
+    const currentBest = bestRecordByOccupation[record.bls_occupation];
+
+    if (!currentBest || record.score > currentBest.score) {
+      bestRecordByOccupation[record.bls_occupation] = record;
+    }
+  });
+
+  return new Set(
+    Object.values(bestRecordByOccupation).map(createRecordKey)
+  );
 }
 
 function buildPopupHtml(record) {
+  const topOccupationBadge = record.isTopOccupationLocation
+    ? `<p class="popup-line"><strong>Map Highlight:</strong> Best overall score for ${record.bls_occupation}</p>`
+    : "";
+
   return `
     <div class="popup-content">
       <h3 class="popup-title">${record.metro}</h3>
-      <!-- Keep the popup focused on the four fields requested for the map. -->
+      <!-- This popup is the on-map blurb for each city marker. -->
+      ${topOccupationBadge}
+      <p class="popup-line"><strong>Occupation:</strong> ${record.bls_occupation}</p>
       <p class="popup-line"><strong>Annual Mean Wage:</strong> ${formatCurrency(record.annual_mean_wage)}</p>
+      <p class="popup-line"><strong>Employment:</strong> ${formatNumber(record.employment)}</p>
       <p class="popup-line"><strong>Location Quotient:</strong> ${record.location_quotient.toFixed(2)}</p>
       <p class="popup-line"><strong>Overall Score:</strong> ${record.score.toFixed(2)}</p>
     </div>
@@ -540,36 +664,64 @@ function renderMapMarkers() {
   markerLayer.clearLayers();
   appState.markerByMetro = {};
 
-  getActiveRecords()
-    .filter(hasMapCoordinates)
-    .forEach((record) => {
-      const isHighlighted = appState.highlightedMetro === record.metro;
-      const markerColor = getMarkerColor(record.score);
-      const marker = L.circleMarker([record.lat, record.lng], {
-        radius: isHighlighted ? 12 : 8,
-        fillColor: markerColor,
-        color: isHighlighted ? "#1f2a44" : markerColor,
-        weight: isHighlighted ? 3 : 2,
-        opacity: 1,
-        fillOpacity: isHighlighted ? 1 : 0.75
-      });
+  const mapRecords = getMapRecords().filter(hasMapCoordinates);
+  const topOccupationRecordKeys = getTopOccupationRecordKeys(mapRecords);
 
-      marker.bindPopup(buildPopupHtml(record));
+  mapRecords.forEach((record) => {
+      const isHighlighted = appState.highlightedMetro === record.metro;
+      const isTopOccupationLocation = topOccupationRecordKeys.has(createRecordKey(record));
+      const markerColor = getMarkerColor(record.score);
+
+      // Give the top-scoring location for each occupation a brighter purple
+      // marker so it stands out while staying inside the TCU-inspired palette.
+      const fillColor = isTopOccupationLocation ? "#7c3aed" : markerColor;
+      const strokeColor = isHighlighted
+        ? "#1f2a44"
+        : isTopOccupationLocation
+          ? "#4d1979"
+          : markerColor;
+      const radius = isHighlighted
+        ? (isTopOccupationLocation ? 15 : 12)
+        : (isTopOccupationLocation ? 11 : 8);
+      const markerRecord = {
+        ...record,
+        isTopOccupationLocation
+      };
+
+      const marker = isTopOccupationLocation
+        ? L.marker([record.lat, record.lng], {
+            icon: createStarMarkerIcon(fillColor, isHighlighted)
+          })
+        : L.circleMarker([record.lat, record.lng], {
+            radius,
+            fillColor,
+            color: strokeColor,
+            weight: isTopOccupationLocation ? 4 : (isHighlighted ? 3 : 2),
+            opacity: 1,
+            fillOpacity: isHighlighted || isTopOccupationLocation ? 1 : 0.75
+          });
+
+      // Keep the popup anchored to the marker so clicks feel like they happen on the map.
+      marker.bindPopup(buildPopupHtml(markerRecord), {
+        autoPan: true,
+        keepInView: true
+      });
       marker.addTo(markerLayer);
       appState.markerByMetro[record.metro] = marker;
 
       marker.on("click", () => {
+        // Re-open the popup after re-rendering so map clicks have a visible result.
         setHighlightedMetro(record.metro, {
           force: true,
           panToMarker: false,
-          openPopup: false
+          openPopup: true
         });
       });
     });
 }
 
 function fitMapToRecords() {
-  const recordsWithCoordinates = getActiveRecords().filter(hasMapCoordinates);
+  const recordsWithCoordinates = getMapRecords().filter(hasMapCoordinates);
 
   if (!recordsWithCoordinates.length) {
     map.setView(APP_CONFIG.map.defaultCenter, APP_CONFIG.map.defaultZoom);
@@ -612,6 +764,7 @@ function initializeApp() {
   populateMajorSelect();
   initializeEventListeners();
   renderApp();
+  preloadAllDatasets();
 }
 
 initializeApp();

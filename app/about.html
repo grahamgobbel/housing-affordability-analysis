@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About TCU Career Compass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="about-shell">
+      <section class="about-panel">
+        <p class="eyebrow">About The App</p>
+        <a class="info-link" href="./index.html">Back To Map</a>
+        <h1>How TCU Career Compass Works</h1>
+        <p class="subtitle">
+          This page helps viewers understand what the app is showing, how the datasets are organized,
+          and how to interpret the map, city cards, and quick snapshot insights.
+        </p>
+
+        <section class="about-section">
+          <h2 class="section-title">Purpose</h2>
+          <div class="about-card">
+            <p>
+              TCU Career Compass is a city exploration tool designed to help viewers compare where
+              different career paths may be strongest after graduation. Instead of showing one generic
+              job market, the app organizes city data by major and then by career path so users can
+              explore options that align with their field of study.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">How To Use It</h2>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>1. Choose A Major</h3>
+              <p>
+                Start with the major dropdown. Once a major is selected, the map limits itself to
+                locations connected to that major’s career paths.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>2. Choose A Career Path</h3>
+              <p>
+                Career path buttons appear based on the selected major. Clicking one loads that
+                specific dataset and updates the city list, insights, and map to match it.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>3. Explore The Results</h3>
+              <p>
+                Users can compare top cities, read quick snapshot summaries, and click map markers
+                to open location popups with occupation and wage details.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">What The Data Means</h2>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>Metro</h3>
+              <p>
+                The metro field is the full metropolitan statistical area used as the location label
+                throughout the app.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Annual Mean Wage</h3>
+              <p>
+                This is the average yearly wage for the related occupation in that metro area.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Employment</h3>
+              <p>
+                Employment shows how many people work in that occupation within the metro area.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Location Quotient</h3>
+              <p>
+                Location quotient compares how concentrated an occupation is in a metro relative to
+                the national average. Higher values suggest stronger specialization.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Score</h3>
+              <p>
+                Score is the app’s overall fit value. It is weighted as 40% employment, 30% location
+                quotient, 20% wage, and 10% affordability. The app uses this value to rank top cities
+                and to style the map markers from lower-scoring to higher-scoring locations.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Occupation</h3>
+              <p>
+                Each career path can be connected to a BLS-style occupation label, such as
+                Management Analysts or Data Scientists.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">How The Quick Snapshot Works</h2>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>Highest Salary</h3>
+              <p>
+                This card identifies the city with the largest <code>annual_mean_wage</code> in the
+                selected career path.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Highest Location Quotient</h3>
+              <p>
+                This card identifies the city with the largest <code>location_quotient</code>,
+                meaning the strongest occupation concentration.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Best Overall Score</h3>
+              <p>
+                This card identifies the city with the largest <code>score</code>, which is the
+                overall fit measure used to rank the city list and many of the map highlights.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Score Formula</h2>
+          <div class="about-card">
+            <p>
+              The overall score combines four factors so viewers can compare cities more quickly:
+              40% employment, 30% location quotient, 20% wage, and 10% affordability.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">How The Map Works</h2>
+          <div class="about-card">
+            <p>
+              The map places each city using its latitude and longitude. Marker color reflects the
+              score range, and standout markers identify the top-scoring location for each occupation
+              in the current map view. Clicking a marker opens a popup with the metro name, occupation,
+              wages, employment, location quotient, and score.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">How The Files Are Organized</h2>
+          <div class="about-card">
+            <p>
+              The datasets are grouped by major inside the <code>data</code> folder. Each major has
+              its own folder, and each career path points to one JSON file. This keeps the project
+              scalable and makes it easier to swap in updated datasets later.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
