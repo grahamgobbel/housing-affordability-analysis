@@ -92,11 +92,19 @@
               </p>
             </article>
             <article class="about-card">
-              <h3>Score</h3>
+              <h3>Regional Price Parity (RPP)</h3>
               <p>
-                Score is the app’s overall fit value. It is weighted as 40% employment, 30% location
-                quotient, 20% wage, and 10% affordability. The app uses this value to rank top cities
-                and to style the map markers from lower-scoring to higher-scoring locations.
+                RPP is a 2024 BEA cost-of-living index (100 = national average). States with RPP > 100
+                are more expensive; states with RPP < 100 are less expensive. Used to adjust wages for
+                fair comparison across regions.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Adjusted Annual Mean Wage</h3>
+              <p>
+                This is the annual mean wage adjusted for regional cost-of-living differences using RPP.
+                It shows what the salary is worth in purchasing power relative to the national average,
+                enabling fair salary comparisons across different cost-of-living areas.
               </p>
             </article>
             <article class="about-card">
@@ -115,8 +123,9 @@
             <article class="about-card">
               <h3>Highest Salary</h3>
               <p>
-                This card identifies the city with the largest <code>annual_mean_wage</code> in the
-                selected career path.
+                This card identifies the city with the largest <code>adjusted_annual_mean_wage</code> in
+                the selected career path. The adjusted wage accounts for regional cost-of-living
+                differences, enabling fair salary comparison across metros.
               </p>
             </article>
             <article class="about-card">
@@ -127,21 +136,25 @@
               </p>
             </article>
             <article class="about-card">
-              <h3>Best Overall Score</h3>
+              <h3>Best Adjusted Wage</h3>
               <p>
-                This card identifies the city with the largest <code>score</code>, which is the
-                overall fit measure used to rank the city list and many of the map highlights.
+                This card identifies the city with the largest <code>adjusted_annual_mean_wage</code>, which
+                represents the strongest financial opportunity after accounting for regional cost-of-living.
+                This is used to rank the city list and highlight top locations on the map.
               </p>
             </article>
           </div>
         </section>
 
         <section class="about-section">
-          <h2 class="section-title">Score Formula</h2>
+          <h2 class="section-title">How Ranking & Comparison Work</h2>
           <div class="about-card">
             <p>
-              The overall score combines four factors so viewers can compare cities more quickly:
-              40% employment, 30% location quotient, 20% wage, and 10% affordability.
+              Cities are ranked by <code>adjusted_annual_mean_wage</code> in descending order. This
+              cost-of-living-adjusted salary is the primary metric used to identify top opportunities
+              because it reflects real earning power across different regional markets. The app uses this
+              metric to rank the city list, identify the top-earning location for each occupation, and
+              color map markers.
             </p>
           </div>
         </section>
@@ -150,10 +163,12 @@
           <h2 class="section-title">How The Map Works</h2>
           <div class="about-card">
             <p>
-              The map places each city using its latitude and longitude. Marker color reflects the
-              score range, and standout markers identify the top-scoring location for each occupation
-              in the current map view. Clicking a marker opens a popup with the metro name, occupation,
-              wages, employment, location quotient, and score.
+              The map places each city using its latitude and longitude. Marker colors reflect the
+              percentile rank of that metro's adjusted wage among all metros in the dataset:
+              darker purple indicates higher-earning locations (top 10%, 20%, 30%), while lighter
+              purple indicates lower-earning ones. Standout brighter markers identify the highest-earning
+              location for each occupation in the current map view. Clicking a marker opens a popup with
+              the metro name, occupation, wages, employment, location quotient, and RPP details.
             </p>
           </div>
         </section>
