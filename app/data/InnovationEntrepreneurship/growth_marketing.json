@@ -7,9 +7,10 @@
     "location_quotient": 1.52,
     "annual_mean_wage": 121430,
     "hourly_mean_wage": 58.38,
-    "score": 0.95,
     "lat": 37.7749,
-    "lng": -122.4194
+    "lng": -122.4194,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 109692.86
   },
   {
     "career_path": "Growth / Marketing",
@@ -19,9 +20,10 @@
     "location_quotient": 1.28,
     "annual_mean_wage": 104320,
     "hourly_mean_wage": 50.15,
-    "score": 0.93,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 96682.11
   },
   {
     "career_path": "Growth / Marketing",
@@ -31,9 +33,10 @@
     "location_quotient": 1.35,
     "annual_mean_wage": 98340,
     "hourly_mean_wage": 47.28,
-    "score": 0.92,
     "lat": 34.0522,
-    "lng": -118.2437
+    "lng": -118.2437,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 88834.69
   },
   {
     "career_path": "Growth / Marketing",
@@ -43,8 +46,9 @@
     "location_quotient": 1.41,
     "annual_mean_wage": 97240,
     "hourly_mean_wage": 46.75,
-    "score": 0.91,
     "lat": 30.2672,
-    "lng": -97.7431
+    "lng": -97.7431,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 100144.18
   }
 ]

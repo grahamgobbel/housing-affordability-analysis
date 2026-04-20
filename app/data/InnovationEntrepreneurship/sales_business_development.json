@@ -7,9 +7,10 @@
     "location_quotient": 1.18,
     "annual_mean_wage": 98240,
     "hourly_mean_wage": 47.23,
-    "score": 0.94,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 91047.27
   },
   {
     "career_path": "Sales / Business Development",
@@ -19,9 +20,10 @@
     "location_quotient": 1.21,
     "annual_mean_wage": 112430,
     "hourly_mean_wage": 54.05,
-    "score": 0.95,
     "lat": 37.7749,
-    "lng": -122.4194
+    "lng": -122.4194,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 101562.78
   },
   {
     "career_path": "Sales / Business Development",
@@ -31,9 +33,10 @@
     "location_quotient": 1.34,
     "annual_mean_wage": 93420,
     "hourly_mean_wage": 44.91,
-    "score": 0.92,
     "lat": 30.2672,
-    "lng": -97.7431
+    "lng": -97.7431,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 96210.09
   },
   {
     "career_path": "Sales / Business Development",
@@ -42,9 +45,10 @@
     "employment": 72140,
     "location_quotient": 1.26,
     "annual_mean_wage": 86120,
-    "hourly_mean_wage": 41.40,
-    "score": 0.92,
+    "hourly_mean_wage": 41.4,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 88692.07
   }
 ]

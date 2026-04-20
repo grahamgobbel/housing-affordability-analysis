@@ -7,9 +7,10 @@
     "location_quotient": 1.82,
     "annual_mean_wage": 87640,
     "hourly_mean_wage": 42.13,
-    "score": 0.96,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 81223.35
   },
   {
     "career_path": "Public Relations",
@@ -19,9 +20,10 @@
     "location_quotient": 1.75,
     "annual_mean_wage": 84210,
     "hourly_mean_wage": 40.49,
-    "score": 0.94,
     "lat": 34.0522,
-    "lng": -118.2437
+    "lng": -118.2437,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 76070.46
   },
   {
     "career_path": "Public Relations",
@@ -31,9 +33,10 @@
     "location_quotient": 2.05,
     "annual_mean_wage": 90340,
     "hourly_mean_wage": 43.43,
-    "score": 0.97,
     "lat": 38.9072,
-    "lng": -77.0369
+    "lng": -77.0369,
+    "rpp": 109.9,
+    "adjusted_annual_mean_wage": 82202.0
   },
   {
     "career_path": "Public Relations",
@@ -43,9 +46,10 @@
     "location_quotient": 1.34,
     "annual_mean_wage": 78210,
     "hourly_mean_wage": 37.61,
-    "score": 0.90,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 78210.0
   },
   {
     "career_path": "Public Relations",
@@ -55,9 +59,10 @@
     "location_quotient": 1.38,
     "annual_mean_wage": 74230,
     "hourly_mean_wage": 35.69,
-    "score": 0.88,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 77082.04
   },
   {
     "career_path": "Public Relations",
@@ -67,9 +72,10 @@
     "location_quotient": 1.22,
     "annual_mean_wage": 72140,
     "hourly_mean_wage": 34.68,
-    "score": 0.87,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 74294.54
   },
   {
     "career_path": "Public Relations",
@@ -79,9 +85,10 @@
     "location_quotient": 1.56,
     "annual_mean_wage": 75320,
     "hourly_mean_wage": 36.21,
-    "score": 0.89,
     "lat": 25.7617,
-    "lng": -80.1918
+    "lng": -80.1918,
+    "rpp": 103.4,
+    "adjusted_annual_mean_wage": 72843.33
   },
   {
     "career_path": "Public Relations",
@@ -91,9 +98,10 @@
     "location_quotient": 1.41,
     "annual_mean_wage": 98230,
     "hourly_mean_wage": 47.23,
-    "score": 0.92,
     "lat": 37.7749,
-    "lng": -122.4194
+    "lng": -122.4194,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 88735.32
   },
   {
     "career_path": "Public Relations",
@@ -103,9 +111,10 @@
     "location_quotient": 1.37,
     "annual_mean_wage": 85640,
     "hourly_mean_wage": 41.17,
-    "score": 0.91,
     "lat": 42.3601,
-    "lng": -71.0589
+    "lng": -71.0589,
+    "rpp": 105.8,
+    "adjusted_annual_mean_wage": 80945.18
   },
   {
     "career_path": "Public Relations",
@@ -115,9 +124,9 @@
     "location_quotient": 1.33,
     "annual_mean_wage": 91240,
     "hourly_mean_wage": 43.87,
-    "score": 0.91,
     "lat": 47.6062,
-    "lng": -122.3321
+    "lng": -122.3321,
+    "rpp": 107.0,
+    "adjusted_annual_mean_wage": 85271.03
   }
 ]
-

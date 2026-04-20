@@ -7,9 +7,10 @@
     "location_quotient": 1.22,
     "annual_mean_wage": 128200,
     "hourly_mean_wage": 61.63,
-    "score": 0.96,
     "lat": 37.7749,
-    "lng": -122.4194
+    "lng": -122.4194,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 115808.49
   },
   {
     "career_path": "Startup / Business Operations",
@@ -19,9 +20,10 @@
     "location_quotient": 1.05,
     "annual_mean_wage": 119830,
     "hourly_mean_wage": 57.61,
-    "score": 0.93,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 111056.53
   },
   {
     "career_path": "Startup / Business Operations",
@@ -31,9 +33,10 @@
     "location_quotient": 1.48,
     "annual_mean_wage": 112430,
     "hourly_mean_wage": 54.05,
-    "score": 0.94,
     "lat": 30.2672,
-    "lng": -97.7431
+    "lng": -97.7431,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 115787.85
   },
   {
     "career_path": "Startup / Business Operations",
@@ -43,8 +46,9 @@
     "location_quotient": 1.21,
     "annual_mean_wage": 120300,
     "hourly_mean_wage": 57.83,
-    "score": 0.93,
     "lat": 47.6062,
-    "lng": -122.3321
+    "lng": -122.3321,
+    "rpp": 107.0,
+    "adjusted_annual_mean_wage": 112429.91
   }
 ]

@@ -7,9 +7,10 @@
     "location_quotient": 1.28,
     "annual_mean_wage": 104320,
     "hourly_mean_wage": 50.15,
-    "score": 0.96,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 96682.11
   },
   {
     "career_path": "Market Research / Analytics",
@@ -19,9 +20,10 @@
     "location_quotient": 1.35,
     "annual_mean_wage": 98340,
     "hourly_mean_wage": 47.28,
-    "score": 0.94,
     "lat": 34.0522,
-    "lng": -118.2437
+    "lng": -118.2437,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 88834.69
   },
   {
     "career_path": "Market Research / Analytics",
@@ -31,9 +33,10 @@
     "location_quotient": 1.22,
     "annual_mean_wage": 87210,
     "hourly_mean_wage": 41.93,
-    "score": 0.91,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 87210.0
   },
   {
     "career_path": "Market Research / Analytics",
@@ -43,9 +46,10 @@
     "location_quotient": 1.52,
     "annual_mean_wage": 121430,
     "hourly_mean_wage": 58.38,
-    "score": 0.95,
     "lat": 37.7749,
-    "lng": -122.4194
+    "lng": -122.4194,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 109692.86
   },
   {
     "career_path": "Market Research / Analytics",
@@ -54,10 +58,11 @@
     "employment": 57210,
     "location_quotient": 1.18,
     "annual_mean_wage": 83210,
-    "hourly_mean_wage": 40.00,
-    "score": 0.90,
+    "hourly_mean_wage": 40.0,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 85695.16
   },
   {
     "career_path": "Market Research / Analytics",
@@ -67,9 +72,10 @@
     "location_quotient": 1.26,
     "annual_mean_wage": 82140,
     "hourly_mean_wage": 39.49,
-    "score": 0.89,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 85295.95
   },
   {
     "career_path": "Market Research / Analytics",
@@ -79,9 +85,10 @@
     "location_quotient": 1.41,
     "annual_mean_wage": 102870,
     "hourly_mean_wage": 49.46,
-    "score": 0.93,
     "lat": 42.3601,
-    "lng": -71.0589
+    "lng": -71.0589,
+    "rpp": 105.8,
+    "adjusted_annual_mean_wage": 97230.62
   },
   {
     "career_path": "Market Research / Analytics",
@@ -91,9 +98,10 @@
     "location_quotient": 1.39,
     "annual_mean_wage": 109240,
     "hourly_mean_wage": 52.52,
-    "score": 0.93,
     "lat": 47.6062,
-    "lng": -122.3321
+    "lng": -122.3321,
+    "rpp": 107.0,
+    "adjusted_annual_mean_wage": 102093.46
   },
   {
     "career_path": "Market Research / Analytics",
@@ -103,9 +111,10 @@
     "location_quotient": 1.33,
     "annual_mean_wage": 79120,
     "hourly_mean_wage": 38.04,
-    "score": 0.88,
     "lat": 25.7617,
-    "lng": -80.1918
+    "lng": -80.1918,
+    "rpp": 103.4,
+    "adjusted_annual_mean_wage": 76518.38
   },
   {
     "career_path": "Market Research / Analytics",
@@ -115,8 +124,9 @@
     "location_quotient": 1.29,
     "annual_mean_wage": 86430,
     "hourly_mean_wage": 41.56,
-    "score": 0.89,
     "lat": 39.7392,
-    "lng": -104.9903
+    "lng": -104.9903,
+    "rpp": 103.1,
+    "adjusted_annual_mean_wage": 83831.23
   }
 ]

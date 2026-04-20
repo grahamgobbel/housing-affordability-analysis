@@ -7,9 +7,10 @@
     "location_quotient": 1.44,
     "annual_mean_wage": 112430,
     "hourly_mean_wage": 54.05,
-    "score": 0.94,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 112430.0
   },
   {
     "career_path": "Transportation / Distribution",
@@ -19,9 +20,10 @@
     "location_quotient": 1.38,
     "annual_mean_wage": 108240,
     "hourly_mean_wage": 52.04,
-    "score": 0.93,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 111472.71
   },
   {
     "career_path": "Transportation / Distribution",
@@ -31,9 +33,10 @@
     "location_quotient": 1.41,
     "annual_mean_wage": 105840,
     "hourly_mean_wage": 50.89,
-    "score": 0.92,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 109906.54
   },
   {
     "career_path": "Transportation / Distribution",
@@ -42,9 +45,10 @@
     "employment": 3180,
     "location_quotient": 1.82,
     "annual_mean_wage": 102340,
-    "hourly_mean_wage": 49.20,
-    "score": 0.91,
+    "hourly_mean_wage": 49.2,
     "lat": 35.1495,
-    "lng": -90.0490
+    "lng": -90.049,
+    "rpp": 91.9,
+    "adjusted_annual_mean_wage": 111360.17
   }
 ]

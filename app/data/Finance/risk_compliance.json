@@ -7,9 +7,10 @@
     "location_quotient": 2.08,
     "annual_mean_wage": 158420,
     "hourly_mean_wage": 76.16,
-    "score": 0.97,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 146821.13
   },
   {
     "career_path": "Risk & Compliance",
@@ -19,9 +20,10 @@
     "location_quotient": 1.62,
     "annual_mean_wage": 132780,
     "hourly_mean_wage": 63.84,
-    "score": 0.92,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 132780.0
   },
   {
     "career_path": "Risk & Compliance",
@@ -31,9 +33,10 @@
     "location_quotient": 1.74,
     "annual_mean_wage": 167210,
     "hourly_mean_wage": 80.39,
-    "score": 0.95,
     "lat": 37.7749,
-    "lng": -122.4194
+    "lng": -122.4194,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 151047.88
   },
   {
     "career_path": "Risk & Compliance",
@@ -43,9 +46,10 @@
     "location_quotient": 1.68,
     "annual_mean_wage": 151340,
     "hourly_mean_wage": 72.76,
-    "score": 0.93,
     "lat": 42.3601,
-    "lng": -71.0589
+    "lng": -71.0589,
+    "rpp": 105.8,
+    "adjusted_annual_mean_wage": 143043.48
   },
   {
     "career_path": "Risk & Compliance",
@@ -55,9 +59,10 @@
     "location_quotient": 1.55,
     "annual_mean_wage": 145820,
     "hourly_mean_wage": 70.11,
-    "score": 0.91,
     "lat": 38.9072,
-    "lng": -77.0369
+    "lng": -77.0369,
+    "rpp": 109.9,
+    "adjusted_annual_mean_wage": 132684.26
   },
   {
     "career_path": "Risk & Compliance",
@@ -67,9 +72,10 @@
     "location_quotient": 1.88,
     "annual_mean_wage": 129640,
     "hourly_mean_wage": 62.33,
-    "score": 0.92,
     "lat": 35.2271,
-    "lng": -80.8431
+    "lng": -80.8431,
+    "rpp": 94.3,
+    "adjusted_annual_mean_wage": 137476.14
   },
   {
     "career_path": "Risk & Compliance",
@@ -79,9 +85,10 @@
     "location_quotient": 1.22,
     "annual_mean_wage": 124870,
     "hourly_mean_wage": 60.03,
-    "score": 0.88,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 128599.38
   },
   {
     "career_path": "Risk & Compliance",
@@ -91,9 +98,10 @@
     "location_quotient": 1.19,
     "annual_mean_wage": 121430,
     "hourly_mean_wage": 58.38,
-    "score": 0.87,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 126095.53
   },
   {
     "career_path": "Risk & Compliance",
@@ -103,9 +111,10 @@
     "location_quotient": 1.05,
     "annual_mean_wage": 136920,
     "hourly_mean_wage": 65.83,
-    "score": 0.89,
     "lat": 34.0522,
-    "lng": -118.2437
+    "lng": -118.2437,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 123685.64
   },
   {
     "career_path": "Risk & Compliance",
@@ -115,8 +124,9 @@
     "location_quotient": 1.14,
     "annual_mean_wage": 119870,
     "hourly_mean_wage": 57.63,
-    "score": 0.86,
     "lat": 29.7604,
-    "lng": -95.3698
+    "lng": -95.3698,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 123450.05
   }
 ]

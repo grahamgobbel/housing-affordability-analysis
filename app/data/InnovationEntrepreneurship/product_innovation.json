@@ -7,9 +7,10 @@
     "location_quotient": 1.44,
     "annual_mean_wage": 124210,
     "hourly_mean_wage": 59.72,
-    "score": 0.95,
     "lat": 37.7749,
-    "lng": -122.4194
+    "lng": -122.4194,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 112204.16
   },
   {
     "career_path": "Product / Innovation",
@@ -19,9 +20,10 @@
     "location_quotient": 1.52,
     "annual_mean_wage": 118420,
     "hourly_mean_wage": 56.94,
-    "score": 0.94,
     "lat": 47.6062,
-    "lng": -122.3321
+    "lng": -122.3321,
+    "rpp": 107.0,
+    "adjusted_annual_mean_wage": 110672.9
   },
   {
     "career_path": "Product / Innovation",
@@ -31,9 +33,10 @@
     "location_quotient": 1.39,
     "annual_mean_wage": 109230,
     "hourly_mean_wage": 52.52,
-    "score": 0.92,
     "lat": 30.2672,
-    "lng": -97.7431
+    "lng": -97.7431,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 112492.28
   },
   {
     "career_path": "Product / Innovation",
@@ -43,8 +46,9 @@
     "location_quotient": 1.36,
     "annual_mean_wage": 114870,
     "hourly_mean_wage": 55.22,
-    "score": 0.93,
     "lat": 42.3601,
-    "lng": -71.0589
+    "lng": -71.0589,
+    "rpp": 105.8,
+    "adjusted_annual_mean_wage": 108572.78
   }
 ]

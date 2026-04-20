@@ -221,7 +221,8 @@ function normalizeRecord(record, major, careerPath) {
     location_quotient: Number(record.location_quotient) || 0,
     annual_mean_wage: Number(record.annual_mean_wage) || 0,
     hourly_mean_wage: Number(record.hourly_mean_wage) || 0,
-    score: Number(record.score) || 0,
+    rpp: Number(record.rpp) || 100.0,
+    adjusted_annual_mean_wage: Number(record.adjusted_annual_mean_wage) || 0,
     lat: Number(record.lat),
     lng: Number(record.lng)
   };
@@ -373,22 +374,22 @@ function getSortedRecords(records, field) {
   return [...records].sort((a, b) => b[field] - a[field]);
 }
 
-// Top cities are ranked by the dataset's precomputed score.
-// That keeps the UI simple: the data file decides the overall fit,
+// Top cities are ranked by adjusted annual mean wage (cost-of-living adjusted).
+// That keeps the UI simple: higher adjusted salary = better financial opportunity,
 // and the app just sorts highest to lowest.
 function getTopMetros(records, limit = APP_CONFIG.map.topCityLimit) {
-  return getSortedRecords(records, "score").slice(0, limit);
+  return getSortedRecords(records, "adjusted_annual_mean_wage").slice(0, limit);
 }
 
 // Quick Snapshot calculations:
-// 1. Highest Salary -> largest annual_mean_wage
+// 1. Highest Salary -> largest adjusted_annual_mean_wage (cost-of-living adjusted)
 // 2. Highest Location Quotient -> largest location_quotient
-// 3. Best Overall Score -> largest score
+// 3. Best Overall Fit -> largest adjusted_annual_mean_wage
 function calculateInsights(records) {
   return {
-    highestSalary: getSortedRecords(records, "annual_mean_wage")[0],
+    highestSalary: getSortedRecords(records, "adjusted_annual_mean_wage")[0],
     strongestConcentration: getSortedRecords(records, "location_quotient")[0],
-    bestOverallFit: getSortedRecords(records, "score")[0]
+    bestOverallFit: getSortedRecords(records, "adjusted_annual_mean_wage")[0]
   };
 }
 
@@ -412,10 +413,15 @@ function getViewStateMessage() {
   return "";
 }
 
-function getMarkerColor(score) {
-  if (score >= 0.9) return "#4d1979";
-  if (score >= 0.8) return "#6d2fa1";
-  if (score >= 0.7) return "#8f5bc2";
+function getMarkerColor(adjustedWage, allWages) {
+  // Compute percentile rank of this wage within all wages
+  const sortedWages = [...allWages].sort((a, b) => a - b);
+  const percentile = sortedWages.filter(w => w <= adjustedWage).length / sortedWages.length;
+  
+  // Color by percentile: top performers get darker purple
+  if (percentile >= 0.9) return "#4d1979";  // Top 10%
+  if (percentile >= 0.8) return "#6d2fa1";  // Top 20%
+  if (percentile >= 0.7) return "#8f5bc2";  // Top 30%
   return "#b999db";
 }
 
@@ -447,21 +453,21 @@ function createRecordKey(record) {
   return [
     record.bls_occupation,
     record.metro,
-    record.score,
+    record.adjusted_annual_mean_wage,
     record.lat,
     record.lng
   ].join("::");
 }
 
-// Find the highest-scoring location for each occupation in the current
-// map view so those markers can stand out visually.
+// Find the highest-paying location (by adjusted wage) for each occupation
+// in the current map view so those markers can stand out visually.
 function getTopOccupationRecordKeys(records) {
   const bestRecordByOccupation = {};
 
   records.forEach((record) => {
     const currentBest = bestRecordByOccupation[record.bls_occupation];
 
-    if (!currentBest || record.score > currentBest.score) {
+    if (!currentBest || record.adjusted_annual_mean_wage > currentBest.adjusted_annual_mean_wage) {
       bestRecordByOccupation[record.bls_occupation] = record;
     }
   });
@@ -473,7 +479,7 @@ function getTopOccupationRecordKeys(records) {
 
 function buildPopupHtml(record) {
   const topOccupationBadge = record.isTopOccupationLocation
-    ? `<p class="popup-line"><strong>Map Highlight:</strong> Best overall score for ${record.bls_occupation}</p>`
+    ? `<p class="popup-line"><strong>Map Highlight:</strong> Highest adjusted wage for ${record.bls_occupation}</p>`
     : "";
 
   return `
@@ -483,9 +489,9 @@ function buildPopupHtml(record) {
       ${topOccupationBadge}
       <p class="popup-line"><strong>Occupation:</strong> ${record.bls_occupation}</p>
       <p class="popup-line"><strong>Annual Mean Wage:</strong> ${formatCurrency(record.annual_mean_wage)}</p>
+      <p class="popup-line"><strong>Adjusted Wage (RPP):</strong> ${formatCurrency(record.adjusted_annual_mean_wage)} <span style="font-size: 0.85em; color: #666;">(RPP: ${record.rpp})</span></p>
       <p class="popup-line"><strong>Employment:</strong> ${formatNumber(record.employment)}</p>
       <p class="popup-line"><strong>Location Quotient:</strong> ${record.location_quotient.toFixed(2)}</p>
-      <p class="popup-line"><strong>Overall Score:</strong> ${record.score.toFixed(2)}</p>
     </div>
   `;
 }
@@ -529,8 +535,8 @@ function createCityCardMarkup(record) {
         </div>
       </div>
       <div class="city-item-score">
-        <span>Overall Fit</span>
-        <span class="score-value">${record.score.toFixed(2)}</span>
+        <span>Adjusted Wage</span>
+        <span class="score-value">${formatCurrency(record.adjusted_annual_mean_wage)}</span>
       </div>
     </div>
   `;
@@ -651,9 +657,9 @@ function renderInsightCards() {
       "accent-alt"
     ),
     createInsightCardMarkup(
-      "Best Overall Score",
+      "Best Adjusted Wage",
       insights.bestOverallFit.metro,
-      `${insights.bestOverallFit.score.toFixed(2)} score`,
+      `${formatCurrency(insights.bestOverallFit.adjusted_annual_mean_wage)} adjusted wage`,
       `${formatCurrency(insights.bestOverallFit.annual_mean_wage)} annual mean wage | ${formatNumber(insights.bestOverallFit.employment)} employed`,
       "accent-alt"
     )
@@ -666,11 +672,12 @@ function renderMapMarkers() {
 
   const mapRecords = getMapRecords().filter(hasMapCoordinates);
   const topOccupationRecordKeys = getTopOccupationRecordKeys(mapRecords);
+  const allAdjustedWages = mapRecords.map(r => r.adjusted_annual_mean_wage);
 
   mapRecords.forEach((record) => {
       const isHighlighted = appState.highlightedMetro === record.metro;
       const isTopOccupationLocation = topOccupationRecordKeys.has(createRecordKey(record));
-      const markerColor = getMarkerColor(record.score);
+      const markerColor = getMarkerColor(record.adjusted_annual_mean_wage, allAdjustedWages);
 
       // Give the top-scoring location for each occupation a brighter purple
       // marker so it stands out while staying inside the TCU-inspired palette.

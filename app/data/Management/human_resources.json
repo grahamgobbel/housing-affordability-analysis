@@ -6,10 +6,11 @@
     "employment": 48240,
     "location_quotient": 1.18,
     "annual_mean_wage": 79240,
-    "hourly_mean_wage": 38.10,
-    "score": 0.92,
+    "hourly_mean_wage": 38.1,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 73438.37
   },
   {
     "career_path": "Human Resources",
@@ -19,9 +20,10 @@
     "location_quotient": 1.12,
     "annual_mean_wage": 76240,
     "hourly_mean_wage": 36.65,
-    "score": 0.90,
     "lat": 34.0522,
-    "lng": -118.2437
+    "lng": -118.2437,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 68870.82
   },
   {
     "career_path": "Human Resources",
@@ -31,9 +33,10 @@
     "location_quotient": 1.15,
     "annual_mean_wage": 74210,
     "hourly_mean_wage": 35.68,
-    "score": 0.89,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 74210.0
   },
   {
     "career_path": "Human Resources",
@@ -43,8 +46,9 @@
     "location_quotient": 1.17,
     "annual_mean_wage": 72140,
     "hourly_mean_wage": 34.68,
-    "score": 0.88,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 74294.54
   }
 ]

@@ -7,21 +7,23 @@
     "location_quotient": 1.32,
     "annual_mean_wage": 104690,
     "hourly_mean_wage": 50.33,
-    "score": 0.96,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 97025.02
   },
   {
     "career_path": "Accounting / Audit",
     "bls_occupation": "Accountants and Auditors",
     "metro": "Los Angeles-Long Beach-Anaheim, CA",
     "employment": 98640,
-    "location_quotient": 1.10,
+    "location_quotient": 1.1,
     "annual_mean_wage": 92310,
     "hourly_mean_wage": 44.38,
-    "score": 0.91,
     "lat": 34.0522,
-    "lng": -118.2437
+    "lng": -118.2437,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 83387.53
   },
   {
     "career_path": "Accounting / Audit",
@@ -31,9 +33,10 @@
     "location_quotient": 1.18,
     "annual_mean_wage": 89470,
     "hourly_mean_wage": 43.02,
-    "score": 0.90,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 89470.0
   },
   {
     "career_path": "Accounting / Audit",
@@ -43,9 +46,10 @@
     "location_quotient": 1.22,
     "annual_mean_wage": 84210,
     "hourly_mean_wage": 40.49,
-    "score": 0.89,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 86725.03
   },
   {
     "career_path": "Accounting / Audit",
@@ -55,21 +59,23 @@
     "location_quotient": 1.24,
     "annual_mean_wage": 83240,
     "hourly_mean_wage": 40.02,
-    "score": 0.88,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 86438.21
   },
   {
     "career_path": "Accounting / Audit",
     "bls_occupation": "Accountants and Auditors",
     "metro": "Houston-The Woodlands-Sugar Land, TX",
     "employment": 64870,
-    "location_quotient": 1.20,
+    "location_quotient": 1.2,
     "annual_mean_wage": 83870,
     "hourly_mean_wage": 40.33,
-    "score": 0.88,
     "lat": 29.7604,
-    "lng": -95.3698
+    "lng": -95.3698,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 86374.87
   },
   {
     "career_path": "Accounting / Audit",
@@ -79,9 +85,10 @@
     "location_quotient": 1.15,
     "annual_mean_wage": 94820,
     "hourly_mean_wage": 45.59,
-    "score": 0.90,
     "lat": 38.9072,
-    "lng": -77.0369
+    "lng": -77.0369,
+    "rpp": 109.9,
+    "adjusted_annual_mean_wage": 86278.43
   },
   {
     "career_path": "Accounting / Audit",
@@ -91,9 +98,10 @@
     "location_quotient": 1.21,
     "annual_mean_wage": 101230,
     "hourly_mean_wage": 48.67,
-    "score": 0.91,
     "lat": 42.3601,
-    "lng": -71.0589
+    "lng": -71.0589,
+    "rpp": 105.8,
+    "adjusted_annual_mean_wage": 95680.53
   },
   {
     "career_path": "Accounting / Audit",
@@ -103,9 +111,10 @@
     "location_quotient": 1.18,
     "annual_mean_wage": 81240,
     "hourly_mean_wage": 39.06,
-    "score": 0.86,
     "lat": 33.4484,
-    "lng": -112.0740
+    "lng": -112.074,
+    "rpp": 100.7,
+    "adjusted_annual_mean_wage": 80675.27
   },
   {
     "career_path": "Accounting / Audit",
@@ -115,8 +124,9 @@
     "location_quotient": 1.25,
     "annual_mean_wage": 87650,
     "hourly_mean_wage": 42.14,
-    "score": 0.88,
     "lat": 44.9778,
-    "lng": -93.2650
+    "lng": -93.265,
+    "rpp": 98.6,
+    "adjusted_annual_mean_wage": 88894.52
   }
 ]

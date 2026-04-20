@@ -7,9 +7,10 @@
     "location_quotient": 1.85,
     "annual_mean_wage": 139210,
     "hourly_mean_wage": 66.93,
-    "score": 0.95,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 129017.61
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -19,9 +20,10 @@
     "location_quotient": 1.22,
     "annual_mean_wage": 112430,
     "hourly_mean_wage": 54.05,
-    "score": 0.90,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 112430.0
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -31,9 +33,10 @@
     "location_quotient": 1.15,
     "annual_mean_wage": 105980,
     "hourly_mean_wage": 50.95,
-    "score": 0.89,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 109145.21
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -43,9 +46,10 @@
     "location_quotient": 1.21,
     "annual_mean_wage": 108340,
     "hourly_mean_wage": 52.09,
-    "score": 0.89,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 112502.6
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -55,9 +59,10 @@
     "location_quotient": 1.18,
     "annual_mean_wage": 104870,
     "hourly_mean_wage": 50.42,
-    "score": 0.88,
     "lat": 29.7604,
-    "lng": -95.3698
+    "lng": -95.3698,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 108002.06
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -67,9 +72,10 @@
     "location_quotient": 1.36,
     "annual_mean_wage": 108120,
     "hourly_mean_wage": 51.98,
-    "score": 0.89,
     "lat": 44.9778,
-    "lng": -93.2650
+    "lng": -93.265,
+    "rpp": 98.6,
+    "adjusted_annual_mean_wage": 109655.17
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -79,9 +85,10 @@
     "location_quotient": 1.26,
     "annual_mean_wage": 110210,
     "hourly_mean_wage": 52.99,
-    "score": 0.89,
     "lat": 39.7392,
-    "lng": -104.9903
+    "lng": -104.9903,
+    "rpp": 103.1,
+    "adjusted_annual_mean_wage": 106896.22
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -91,9 +98,10 @@
     "location_quotient": 1.74,
     "annual_mean_wage": 111820,
     "hourly_mean_wage": 53.76,
-    "score": 0.91,
     "lat": 35.2271,
-    "lng": -80.8431
+    "lng": -80.8431,
+    "rpp": 94.3,
+    "adjusted_annual_mean_wage": 118579.0
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -103,9 +111,10 @@
     "location_quotient": 1.17,
     "annual_mean_wage": 101430,
     "hourly_mean_wage": 48.76,
-    "score": 0.87,
     "lat": 33.4484,
-    "lng": -112.0740
+    "lng": -112.074,
+    "rpp": 100.7,
+    "adjusted_annual_mean_wage": 100724.93
   },
   {
     "career_path": "Financial Analysis (Accounting Track)",
@@ -115,8 +124,9 @@
     "location_quotient": 1.33,
     "annual_mean_wage": 120870,
     "hourly_mean_wage": 58.11,
-    "score": 0.91,
     "lat": 38.9072,
-    "lng": -77.0369
+    "lng": -77.0369,
+    "rpp": 109.9,
+    "adjusted_annual_mean_wage": 109981.8
   }
 ]

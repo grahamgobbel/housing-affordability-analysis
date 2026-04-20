@@ -7,9 +7,10 @@
     "location_quotient": 1.48,
     "annual_mean_wage": 85640,
     "hourly_mean_wage": 41.17,
-    "score": 0.94,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 88197.73
   },
   {
     "career_path": "Logistics",
@@ -19,9 +20,10 @@
     "location_quotient": 1.52,
     "annual_mean_wage": 84210,
     "hourly_mean_wage": 40.49,
-    "score": 0.93,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 87445.48
   },
   {
     "career_path": "Logistics",
@@ -31,9 +33,10 @@
     "location_quotient": 1.26,
     "annual_mean_wage": 81240,
     "hourly_mean_wage": 39.06,
-    "score": 0.91,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 81240.0
   },
   {
     "career_path": "Logistics",
@@ -43,9 +46,10 @@
     "location_quotient": 1.41,
     "annual_mean_wage": 82340,
     "hourly_mean_wage": 39.59,
-    "score": 0.91,
     "lat": 29.7604,
-    "lng": -95.3698
+    "lng": -95.3698,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 84799.18
   },
   {
     "career_path": "Logistics",
@@ -55,9 +59,10 @@
     "location_quotient": 1.22,
     "annual_mean_wage": 87420,
     "hourly_mean_wage": 42.03,
-    "score": 0.92,
     "lat": 34.0522,
-    "lng": -118.2437
+    "lng": -118.2437,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 78970.19
   },
   {
     "career_path": "Logistics",
@@ -67,9 +72,10 @@
     "location_quotient": 1.78,
     "annual_mean_wage": 76840,
     "hourly_mean_wage": 36.94,
-    "score": 0.90,
     "lat": 35.1495,
-    "lng": -90.0490
+    "lng": -90.049,
+    "rpp": 91.9,
+    "adjusted_annual_mean_wage": 83612.62
   },
   {
     "career_path": "Logistics",
@@ -79,9 +85,9 @@
     "location_quotient": 1.72,
     "annual_mean_wage": 75420,
     "hourly_mean_wage": 36.26,
-    "score": 0.89,
     "lat": 38.2527,
-    "lng": -85.7585
+    "lng": -85.7585,
+    "rpp": 90.2,
+    "adjusted_annual_mean_wage": 83614.19
   }
 ]
-

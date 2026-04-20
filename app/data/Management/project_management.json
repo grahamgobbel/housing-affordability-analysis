@@ -7,9 +7,10 @@
     "location_quotient": 1.52,
     "annual_mean_wage": 112340,
     "hourly_mean_wage": 54.01,
-    "score": 0.94,
     "lat": 38.9072,
-    "lng": -77.0369
+    "lng": -77.0369,
+    "rpp": 109.9,
+    "adjusted_annual_mean_wage": 102220.2
   },
   {
     "career_path": "Project Management",
@@ -19,9 +20,10 @@
     "location_quotient": 1.12,
     "annual_mean_wage": 108420,
     "hourly_mean_wage": 52.13,
-    "score": 0.91,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 100481.93
   },
   {
     "career_path": "Project Management",
@@ -31,9 +33,10 @@
     "location_quotient": 1.21,
     "annual_mean_wage": 98420,
     "hourly_mean_wage": 47.31,
-    "score": 0.89,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 101359.42
   },
   {
     "career_path": "Project Management",
@@ -43,8 +46,9 @@
     "location_quotient": 1.25,
     "annual_mean_wage": 96210,
     "hourly_mean_wage": 46.25,
-    "score": 0.88,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 99906.54
   }
 ]

@@ -7,9 +7,10 @@
     "location_quotient": 1.62,
     "annual_mean_wage": 104870,
     "hourly_mean_wage": 50.42,
-    "score": 0.94,
     "lat": 40.7128,
-    "lng": -74.0060
+    "lng": -74.006,
+    "rpp": 107.9,
+    "adjusted_annual_mean_wage": 97191.84
   },
   {
     "career_path": "Credit & Lending",
@@ -19,9 +20,10 @@
     "location_quotient": 2.05,
     "annual_mean_wage": 98740,
     "hourly_mean_wage": 47.47,
-    "score": 0.95,
     "lat": 35.2271,
-    "lng": -80.8431
+    "lng": -80.8431,
+    "rpp": 94.3,
+    "adjusted_annual_mean_wage": 104708.38
   },
   {
     "career_path": "Credit & Lending",
@@ -31,9 +33,10 @@
     "location_quotient": 1.28,
     "annual_mean_wage": 96320,
     "hourly_mean_wage": 46.31,
-    "score": 0.90,
     "lat": 41.8781,
-    "lng": -87.6298
+    "lng": -87.6298,
+    "rpp": 100.0,
+    "adjusted_annual_mean_wage": 96320.0
   },
   {
     "career_path": "Credit & Lending",
@@ -43,9 +46,10 @@
     "location_quotient": 1.18,
     "annual_mean_wage": 94580,
     "hourly_mean_wage": 45.47,
-    "score": 0.88,
     "lat": 32.7767,
-    "lng": -96.7970
+    "lng": -96.797,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 97404.74
   },
   {
     "career_path": "Credit & Lending",
@@ -55,9 +59,10 @@
     "location_quotient": 1.21,
     "annual_mean_wage": 93240,
     "hourly_mean_wage": 44.83,
-    "score": 0.87,
-    "lat": 33.7490,
-    "lng": -84.3880
+    "lat": 33.749,
+    "lng": -84.388,
+    "rpp": 96.3,
+    "adjusted_annual_mean_wage": 96822.43
   },
   {
     "career_path": "Credit & Lending",
@@ -67,9 +72,10 @@
     "location_quotient": 1.02,
     "annual_mean_wage": 101540,
     "hourly_mean_wage": 48.82,
-    "score": 0.89,
     "lat": 34.0522,
-    "lng": -118.2437
+    "lng": -118.2437,
+    "rpp": 110.7,
+    "adjusted_annual_mean_wage": 91725.38
   },
   {
     "career_path": "Credit & Lending",
@@ -79,9 +85,10 @@
     "location_quotient": 1.14,
     "annual_mean_wage": 92870,
     "hourly_mean_wage": 44.65,
-    "score": 0.86,
     "lat": 29.7604,
-    "lng": -95.3698
+    "lng": -95.3698,
+    "rpp": 97.1,
+    "adjusted_annual_mean_wage": 95643.67
   },
   {
     "career_path": "Credit & Lending",
@@ -91,9 +98,10 @@
     "location_quotient": 1.36,
     "annual_mean_wage": 94820,
     "hourly_mean_wage": 45.59,
-    "score": 0.88,
     "lat": 44.9778,
-    "lng": -93.2650
+    "lng": -93.265,
+    "rpp": 98.6,
+    "adjusted_annual_mean_wage": 96166.33
   },
   {
     "career_path": "Credit & Lending",
@@ -103,9 +111,10 @@
     "location_quotient": 1.19,
     "annual_mean_wage": 95670,
     "hourly_mean_wage": 45.99,
-    "score": 0.87,
     "lat": 39.7392,
-    "lng": -104.9903
+    "lng": -104.9903,
+    "rpp": 103.1,
+    "adjusted_annual_mean_wage": 92793.4
   },
   {
     "career_path": "Credit & Lending",
@@ -115,8 +124,9 @@
     "location_quotient": 1.17,
     "annual_mean_wage": 91740,
     "hourly_mean_wage": 44.11,
-    "score": 0.85,
     "lat": 33.4484,
-    "lng": -112.0740
+    "lng": -112.074,
+    "rpp": 100.7,
+    "adjusted_annual_mean_wage": 91102.28
   }
 ]
