@@ -22,35 +22,35 @@ The app is intentionally small for a capstone timeline:
 
 ```
 housing-affordability-analysis/
-|- data/
-|  |- raw/
-|  |- cleaned/
-|  `- top100citiesrent.csv
-|- app/
+|- docs/
+|  |- data/
+|  |  |- Accounting/
+|  |  |- BIS/
+|  |  |- Finance/
+|  |  |- InnovationEntrepreneurship/
+|  |  |- Management/
+|  |  |- Marketing/
+|  |  |- SupplyChain/
 |  |- index.html
+|  |- about.html
 |  |- style.css
 |  `- script.js
 |- notebooks/
-|  |- affordability_analysis.ipynb
 |  `- data_prep.ipynb
-|- outputs/
-|  |- charts/
-|  `- tables/
 `- README.md
 ```
 
-## Data Plan
+## Data
 
-Use fake sample data first (already in `app/script.js`) to finish the full app flow.
-Then replace with cleaned real sources:
+The app uses real BLS occupation data organized by major and career path:
 
-- major -> common jobs mapping
-- job + city salary/openings data (BLS)
-- city rent/housing data
+- **27 JSON files** across 7 business majors
+- **Regional Price Parity (RPP)** adjustments for cost-of-living comparisons
+- **Affordability metrics** combining salary and location quotient data
 
 ## Quick Start
 
-1. Open `app/index.html` in a browser.
+1. Open `docs/index.html` in a browser.
 2. Choose a major in the dropdown.
 3. Click city markers to view city insights.
 

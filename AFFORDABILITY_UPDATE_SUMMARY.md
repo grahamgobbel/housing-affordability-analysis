@@ -53,7 +53,7 @@ The state is extracted from the metro string following these rules:
 
 ## Code Updates
 
-### app/script.js - normalizeRecord() Function
+### docs/script.js - normalizeRecord() Function
 Updated to include three new fields:
 ```javascript
 rpp: Number(record.rpp) || 100.0,
@@ -61,7 +61,7 @@ adjusted_annual_mean_wage: Number(record.adjusted_annual_mean_wage) || 0,
 affordability_score: Number(record.affordability_score) || 0,
 ```
 
-### app/script.js - buildPopupHtml() Function
+### docs/script.js - buildPopupHtml() Function
 Enhanced to display affordability information in popups:
 - Shows original annual wage
 - Shows adjusted wage with RPP context
