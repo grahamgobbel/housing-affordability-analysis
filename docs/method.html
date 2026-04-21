@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Methodology - TCU Career Compass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="about-shell">
+      <section class="about-panel">
+        <p class="eyebrow">Research Methodology</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <a class="info-link" href="./index.html">Back To Map</a>
+          <a class="info-link" href="./about.html">About This Project</a>
+          <a class="info-link" href="./literature.html">Literature Review</a>
+          <a class="info-link" href="./findings.html">Analysis & Findings</a>
+          <a class="info-link" href="./conclusion.html">Conclusion</a>
+        </div>
+        <h1>Research Methodology</h1>
+        <p class="subtitle">
+          This section describes the specific techniques, data sources, and analytical methods used to develop TCU Career Compass and answer the Research Question: How do housing affordability and career opportunities vary across US cities for different business majors?
+        </p>
+
+        <section class="about-section">
+          <h2 class="section-title">Research Question</h2>
+          <div class="about-card">
+            <p>
+              <strong>How do housing affordability and career opportunities vary across US cities for different business majors?</strong>
+            </p>
+            <p>
+              This research question addresses the practical challenge faced by undergraduate business students at TCU: understanding which cities offer both strong career prospects and manageable living costs for their specific major and career path.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Research Approach</h2>
+          <div class="about-card">
+            <p>
+              This project uses a <strong>quantitative, data-driven approach</strong> to evaluate affordability across major U.S. metropolitan areas for recent college graduates. The methodology combines publicly available economic data, data processing techniques, and web application development to create an interactive tool. The approach is inherently quantitative, relying on government-sourced numerical datasets (wages, employment, cost indices) to compare cities and career paths. However, the interactive nature of the tool allows users to qualitatively explore patterns and derive their own insights based on their individual circumstances.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Data Collection Methods</h2>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>U.S. Bureau of Labor Statistics (BLS) - OEWS Data</h3>
+              <p>
+                <strong>Source:</strong> Occupational Employment and Wage Statistics (OEWS) program
+              </p>
+              <p>
+                <strong>What was collected:</strong> Annual mean wages, employment counts, and location quotient data for occupations by metropolitan statistical area (MSA). Data was aggregated at the MSA level to enable city-level comparisons.
+              </p>
+              <p>
+                <strong>How it was collected:</strong> Downloaded via the BLS Data Tools portal and public datasets, with API queries structured to retrieve specific occupation and geography combinations relevant to business career paths.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>U.S. Bureau of Economic Analysis (BEA) - Regional Price Parities</h3>
+              <p>
+                <strong>Source:</strong> Regional Price Parities (RPP) index, 2024
+              </p>
+              <p>
+                <strong>What was collected:</strong> State-level cost-of-living indices (base year 100 = national average) to adjust wages for regional affordability differences.
+              </p>
+              <p>
+                <strong>Why RPP over Rent:</strong> Unlike rent-based metrics, RPP reflects a broader set of expenses, including housing, transportation, food, and other goods and services, making it more suitable for evaluating overall affordability. This comprehensive approach provides a more accurate picture of true living costs across regions.
+              </p>
+              <p>
+                <strong>How it was collected:</strong> 2024 RPP data accessed through BEA's official publications and aggregated by state to enable cost-of-living adjustments at the metro level.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Career Path Mapping</h3>
+              <p>
+                <strong>Source:</strong> TCU Neeley School of Business major and career path definitions
+              </p>
+              <p>
+                <strong>What was collected:</strong> Mapping of TCU business majors (Finance, Accounting, Marketing, BIS, Supply Chain, Management, Innovation & Entrepreneurship) to relevant BLS occupations and career specializations.
+              </p>
+              <p>
+                <strong>How it was collected:</strong> To connect data to college majors, each major was mapped to popular entry-level occupations using standardized BLS occupation categories. This required interpretation and simplification, as no direct dataset exists that links majors to careers in a one-to-one format. The process involved researching the top entry-level jobs for each major, then matching them to the closest BLS occupation codes. This manual mapping step was critical for ensuring academic relevance while maintaining data integrity.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Data Management & Preparation</h2>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>Data Cleaning</h3>
+              <p>
+                Raw BLS data was cleaned to remove duplicate records, fill missing values using forward/backward fill methods where appropriate, and standardize geographic identifiers. Invalid or incomplete occupation-metro combinations were excluded.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Data Aggregation</h3>
+              <p>
+                BLS occupation codes (SOC) were mapped to TCU career paths and aggregated by metro area. When multiple occupations fell under one career path category, summary statistics (mean, median, percentile ranks) were computed.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Cost-of-Living Adjustment Formula</h3>
+              <p>
+                To make wages comparable across cities, a calculated field called <code>adjusted_annual_mean_wage</code> was created using the formula:
+              </p>
+              <p style="font-family: 'IBM Plex Mono', monospace; background: rgba(77, 25, 121, 0.05); padding: 10px; border-radius: 8px; margin: 8px 0;">
+                adjusted_annual_mean_wage = annual_mean_wage ÷ (RPP ÷ 100)
+              </p>
+              <p>
+                This transformation normalizes salaries to a national baseline by accounting for regional cost-of-living differences. As a result, the adjusted wage reflects purchasing power rather than nominal income, enabling fair comparison across high-cost and low-cost metros.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Data Formatting & Storage</h3>
+              <p>
+                The data was cleaned and structured into JSON files organized by major and career pathway. Each dataset includes metropolitan area names, occupation titles, wage data, and adjusted wage values. This structure allows the application to load and display relevant data based on user input. JSON format was chosen because it keeps datasets easy to manage and enables direct client-side consumption without requiring backend infrastructure.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Data Analysis Methods</h2>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>Descriptive Statistics</h3>
+              <p>
+                For each career path and metro combination, basic statistics are computed: mean, median, and percentile ranks of adjusted wages. These statistics provide a baseline understanding of wage distributions and market concentration.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Location Quotient (LQ) Analysis</h3>
+              <p>
+                Location quotient identifies metros where specific occupations are disproportionately concentrated. LQ values > 1.0 indicate above-average occupation specialization, highlighting metros where career paths are particularly strong.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Ranking & Comparative Analysis</h3>
+              <p>
+                For each career path, metros are ranked by adjusted annual mean wage in descending order. This ranking identifies top earning opportunities while accounting for regional cost differences, enabling fair cross-metro comparison.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Interactive Visualization & Exploratory Analysis</h3>
+              <p>
+                Data is visualized on an interactive map with color-coded markers (darker = higher-earning locations). Users can filter by major/career path and explore trade-offs between salary, employment, and cost of living in real time.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Methodological Choices & Project Scope</h2>
+          <div class="about-card">
+            <p>
+              <strong>MSA-Level Geographic Aggregation:</strong> Analysis is conducted at the metropolitan statistical area (MSA) level rather than individual city level. This follows BLS reporting standards and provides more stable employment and wage data while covering most major US labor markets.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Cost-of-Living Adjustment:</strong> The decision to adjust wages using Regional Price Parities was critical to answering the research question. Without adjustment, high-wage cities in expensive metros would be overvalued, leading to misleading recommendations. RPP adjustment enables true purchasing power comparison.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>2024 Data Baseline:</strong> The project uses 2024 data to ensure relevance for current students making career and location decisions. While this limits historical trend analysis, it maximizes applicability to the target audience.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Focus on Seven Business Majors:</strong> The scope was intentionally limited to TCU's business school majors rather than all 200+ BLS occupations. This manageable scope enables meaningful career-path-specific insights while keeping the tool approachable for users.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Occupation-to-Major Mapping:</strong> BLS occupations were manually mapped to TCU career paths based on curriculum alignment and industry practice. This introduces an element of human judgment but ensures academic relevance to the target audience.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Metrics Selection:</strong> The decision to prioritize adjusted annual mean wage as the ranking metric (over median wage or location quotient alone) reflects the assumption that earning potential is a primary decision factor. Alternative weighting schemes could be supported in future versions.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Application Development & Technologies</h2>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>Frontend Stack</h3>
+              <p>
+                The application was built using HTML, CSS, and JavaScript, with the Leaflet library used to create an interactive map interface. Vanilla JavaScript (no framework) was chosen for performance and simplicity. Users can select a major, and the application dynamically updates to display cities, job roles, and wage data associated with that selection.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Data Processing & Backend</h3>
+              <p>
+                Data cleaning, aggregation, and statistical analysis were performed in Python using libraries: <code>pandas</code> (data manipulation), <code>numpy</code> (numerical operations), and <code>json</code> (data export). JavaScript is used to load and filter datasets, apply calculations, and update the UI in real time.
+              </p>
+            </article>
+            <article class="about-card">
+              <h3>Data Storage & Distribution</h3>
+              <p>
+                All datasets are stored in JSON format, organized by major and career pathway. This keeps them easy to manage and enables static file serving without backend infrastructure, reducing deployment complexity and improving performance.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Use of AI Tools</h2>
+          <div class="about-card">
+            <p>
+              AI tools such as ChatGPT and GitHub Copilot were used throughout the development process, especially for coding, debugging, and structuring. These tools were most helpful in speeding up technical tasks, such as identifying errors, refining JavaScript logic, and suggesting more efficient ways to organize data.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              In addition, AI tools supported early-stage ideation, including how to structure the application, how to approach the affordability calculation, and how to improve the clarity of the user interface. However, these suggestions were not implemented blindly. Most of the outputs actually required a lot of modification, and in some cases, the suggested solutions were either too generic or did not fully align with the project's goals.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Critical Thinking & Decision Making:</strong> This process reinforced an important lesson: while AI tools can significantly increase efficiency, they do not replace the need for critical thinking and understanding. Key decisions like selecting RPP over rent-based measures, designing the adjusted wage formula, and determining how to map majors to occupations were made independently. AI functioned as a great support tool rather than a decision-maker.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Overall Impact:</strong> Using AI tools improved the speed and flexibility of development but required active evaluation to ensure accuracy and relevance. The most valuable AI contributions were reducing boilerplate code writing time and suggesting debugging approaches, which freed more time for domain-specific logic and research decisions. The trade-off was accepting some imperfect AI-generated code in favor of maintaining full ownership of data integrity and research rigor.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Limitations & Future Directions</h2>
+          <div class="about-card">
+            <p>
+              <strong>Data Recency:</strong> BLS data reflects labor market conditions at a single point in time (2024). Future versions should incorporate trend data and quarterly updates to track market evolution.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Geographic Coverage:</strong> Analysis is limited to major MSAs covered by BLS OEWS. Smaller metros and rural markets are not represented. Expanding data coverage could provide additional options for users.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Occupation-to-Major Mapping:</strong> The manual mapping of BLS occupations to TCU majors introduces subjectivity. A formal curriculum-to-occupation validation process with academic advisors could refine this mapping.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Additional Factors Not Considered:</strong> The tool prioritizes salary and employment but does not factor in other quality-of-life metrics (cultural amenities, climate, proximity to family). Future versions could integrate additional datasets.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>User Behavior Tracking:</strong> Currently, the app does not log which cities or career paths users explore most. Adding anonymized analytics could reveal which combinations are most of interest and guide future research.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2 class="section-title">Ethical Considerations</h2>
+          <div class="about-card">
+            <p>
+              <strong>Data Transparency:</strong> All data sources are publicly documented and directly linked. Users can verify underlying statistics and understand how conclusions were derived.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Avoiding Bias in Recommendations:</strong> The tool presents data without directing users toward "optimal" choices. It aims to inform rather than prescribe, recognizing that career decisions involve personal values beyond salary and employment rates.
+            </p>
+          </div>
+          <div class="about-card">
+            <p>
+              <strong>Occupation Privacy:</strong> Data is aggregated at the occupation level; no individual-level employment data is disclosed, protecting worker privacy while maintaining analytical utility.
+            </p>
+          </div>
+        </section>
+
+      </section>
+    </main>
+  </body>
+</html>
