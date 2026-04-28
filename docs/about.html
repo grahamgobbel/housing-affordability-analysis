@@ -69,10 +69,13 @@
         </section>
 
         <section class="about-section">
-          <h2 class="section-title">Map Marker Color Guide</h2>
-          <div style="background: #f8f7fa; padding: 25px; border-radius: 12px; border-left: 5px solid #4d1979;">
+          <h2 class="section-title">Reading the Map</h2>
+          <div style="background: #f8f7fa; padding: 25px; border-radius: 12px; border-left: 5px solid #4d1979; margin-bottom: 20px;">
+            <p style="margin: 0 0 15px 0; color: #5a4b70; font-size: 0.95rem;">
+              <strong>How Cities Are Ranked:</strong> Cities are ranked by adjusted annual mean wage (cost-of-living adjusted). This metric identifies the strongest financial opportunities because it reflects real earning power across different regional markets.
+            </p>
             <p style="margin: 0 0 20px 0; color: #5a4b70; font-size: 0.95rem;">
-              Each city on the map is marked with either a star or circle. Stars highlight the best-paying city for each specific occupation, while circles show all other cities colored by their relative wage rank:
+              <strong>What You See on the Map:</strong> Each city is marked with either a star or circle. Stars identify the best-paying city for each occupation. Circles represent all other cities, colored by their wage percentile rank:
             </p>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
               <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: white; border-radius: 8px; border: 2px solid #7c3aed;">
@@ -81,7 +84,7 @@
                 </svg>
                 <div>
                   <p style="margin: 0; font-weight: 600; color: #7c3aed;">Top for Occupation (Star)</p>
-                  <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #5a4b70;">Best-paying city for that specific job</p>
+                  <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #5a4b70;">Highest-paying city for that job</p>
                 </div>
               </div>
               <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: white; border-radius: 8px; border: 2px solid #4d1979;">
@@ -121,6 +124,12 @@
                 </div>
               </div>
             </div>
+            <p style="margin: 20px 0 0 0; color: #5a4b70; font-size: 0.95rem;">
+              <strong>Interacting with Markers:</strong> Click any marker to see detailed information: metro name, occupation, wages, employment, location quotient, and RPP.
+            </p>
+            <p style="margin: 20px 0 0 0; color: #5a4b70; font-size: 0.95rem;">
+              <strong>Why Stars vs. Circles:</strong> Stars use bright purple (#7c3aed) to highlight the highest-paying city for each specific occupation. This makes the best opportunity stand out visually. Circles show all other cities, ranked by wage percentile.
+            </p>
           </div>
         </section>
 
@@ -183,11 +192,15 @@
           <h2 class="section-title">How The Quick Snapshot Works</h2>
           <div class="about-grid">
             <article class="about-card">
+              <h3>Highest Salary</h3>
+              <p>
+                The city with the largest raw annual wage for your career path. This shows the nominal salary before adjusting for regional cost-of-living differences.
+              </p>
+            </article>
+            <article class="about-card">
               <h3>Best Adjusted Wage</h3>
               <p>
-                The city with the largest <code>adjusted_annual_mean_wage</code> for your career path.
-                This represents the strongest financial opportunity after accounting for regional cost-of-living
-                and is used to rank the city list and highlight top locations on the map.
+                The city with the largest adjusted wage after accounting for regional cost-of-living (RPP). This represents the strongest financial opportunity in terms of actual purchasing power and is used to rank the city list and highlight top locations on the map.
               </p>
             </article>
             <article class="about-card">
@@ -197,33 +210,6 @@
                 meaning the strongest occupation concentration in that field.
               </p>
             </article>
-          </div>
-        </section>
-
-        <section class="about-section">
-          <h2 class="section-title">How Ranking & Comparison Work</h2>
-          <div class="about-card">
-            <p>
-              Cities are ranked by <code>adjusted_annual_mean_wage</code> in descending order. This
-              cost-of-living-adjusted salary is the primary metric used to identify top opportunities
-              because it reflects real earning power across different regional markets. The app uses this
-              metric to rank the city list, identify the top-earning location for each occupation, and
-              color map markers.
-            </p>
-          </div>
-        </section>
-
-        <section class="about-section">
-          <h2 class="section-title">How The Map Works</h2>
-          <div class="about-card">
-            <p>
-              The map places each city using its latitude and longitude. Marker colors reflect the
-              percentile rank of that metro's adjusted wage among all metros in the dataset:
-              darker purple indicates higher-earning locations (top 10%, 20%, 30%), while lighter
-              purple indicates lower-earning ones. Standout brighter markers identify the highest-earning
-              location for each occupation in the current map view. Clicking a marker opens a popup with
-              the metro name, occupation, wages, employment, location quotient, and RPP details.
-            </p>
           </div>
         </section>
 

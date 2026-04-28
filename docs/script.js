@@ -382,12 +382,12 @@ function getTopMetros(records, limit = APP_CONFIG.map.topCityLimit) {
 }
 
 // Quick Snapshot calculations:
-// 1. Highest Salary -> largest adjusted_annual_mean_wage (cost-of-living adjusted)
+// 1. Highest Salary -> largest annual_mean_wage (raw, unadjusted)
 // 2. Highest Location Quotient -> largest location_quotient
-// 3. Best Overall Fit -> largest adjusted_annual_mean_wage
+// 3. Best Overall Fit -> largest adjusted_annual_mean_wage (cost-of-living adjusted)
 function calculateInsights(records) {
   return {
-    highestSalary: getSortedRecords(records, "adjusted_annual_mean_wage")[0],
+    highestSalary: getSortedRecords(records, "annual_mean_wage")[0],
     strongestConcentration: getSortedRecords(records, "location_quotient")[0],
     bestOverallFit: getSortedRecords(records, "adjusted_annual_mean_wage")[0]
   };

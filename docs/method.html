@@ -131,9 +131,9 @@
               </p>
             </article>
             <article class="about-card">
-              <h3>Data Aggregation</h3>
+              <h3>Data Organization</h3>
               <p>
-                BLS occupation codes (SOC) were mapped to TCU career paths and aggregated by metro area. When multiple occupations fell under one career path category, summary statistics (mean, median, percentile ranks) were computed.
+                Each career path is mapped to a specific BLS occupation. For example, "Financial Analysis" maps to "Financial Analysts," and "Credit & Lending" maps to "Credit Analysts." Each JSON file contains that occupation's wage and employment data across all metro areas in the dataset.
               </p>
             </article>
             <article class="about-card">
@@ -163,7 +163,7 @@
             <article class="about-card">
               <h3>Descriptive Statistics</h3>
               <p>
-                For each career path and metro combination, basic statistics are computed: mean, median, and percentile ranks of adjusted wages. These statistics provide a baseline understanding of wage distributions and market concentration.
+                For each career path and metro combination, percentile ranks of adjusted wages are calculated. These percentile ranks determine the marker colors on the map (darker purple for higher-earning locations), providing a visual indication of wage distributions across regions.
               </p>
             </article>
             <article class="about-card">
@@ -249,7 +249,7 @@
           <h2 class="section-title">Use of AI Tools</h2>
           <div class="about-card">
             <p>
-              ChatGPT and GitHub Copilot accelerated coding and debugging tasks by reducing boilerplate and suggesting logic improvements. However, AI suggestions required careful evaluation—many outputs were too generic or misaligned with project goals.
+              ChatGPT and GitHub Copilot accelerated coding and debugging tasks by reducing boilerplate and suggesting logic improvements. However, AI suggestions required careful evaluation (many outputs were too generic or misaligned with project goals).
             </p>
             <p>
               <strong>Critical Thinking Remained Essential:</strong> Key research decisions (using comprehensive RPP instead of isolating housing data, wage adjustment formula, major-to-occupation mapping) were made independently. AI served as a tool to speed up implementation, not guide strategy.
