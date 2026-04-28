@@ -25,14 +25,41 @@
         </div>
         <h1>Research Methodology</h1>
         <p class="subtitle">
-          This section describes the specific techniques, data sources, and analytical methods used to develop TCU Career Compass and answer the Research Question: How do housing affordability and career opportunities vary across US cities for different business majors?
+          This section describes the specific techniques, data sources, and analytical methods used to develop TCU Career Compass and answer the Research Question: How do overall cost-of-living affordability and career opportunities vary across US cities for different business majors?
         </p>
+
+        <section class="about-section">
+          <h2 class="section-title">Research Pipeline Overview</h2>
+          <div style="background: linear-gradient(135deg, rgba(77, 25, 121, 0.08), rgba(163, 169, 172, 0.06)); padding: 20px; border-radius: 12px; margin-bottom: 20px; overflow-x: auto;">
+            <div style="display: flex; align-items: stretch; justify-content: space-around; gap: 12px; min-width: 600px;">
+              <div style="text-align: center; flex: 1; min-width: 120px; display: flex; flex-direction: column;">
+                <div style="background: #4d1979; color: white; padding: 15px; border-radius: 8px; font-weight: 600; margin-bottom: 8px; min-height: 70px; display: flex; align-items: center; justify-content: center;">📊 Data<br/>Collection</div>
+                <p style="font-size: 0.85rem; margin: 0; flex-grow: 1; display: flex; align-items: center; justify-content: center;">BLS, BEA,<br/>Career mapping</p>
+              </div>
+              <div style="font-size: 2rem; color: #b8a7cf; flex-shrink: 0; display: flex; align-items: center;">→</div>
+              <div style="text-align: center; flex: 1; min-width: 120px; display: flex; flex-direction: column;">
+                <div style="background: #7a5a9e; color: white; padding: 15px; border-radius: 8px; font-weight: 600; margin-bottom: 8px; min-height: 70px; display: flex; align-items: center; justify-content: center;">🔄 Data<br/>Processing</div>
+                <p style="font-size: 0.85rem; margin: 0; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Cleaning,<br/>Aggregation,<br/>Adjustment</p>
+              </div>
+              <div style="font-size: 2rem; color: #b8a7cf; flex-shrink: 0; display: flex; align-items: center;">→</div>
+              <div style="text-align: center; flex: 1; min-width: 120px; display: flex; flex-direction: column;">
+                <div style="background: #a3a9ac; color: white; padding: 15px; border-radius: 8px; font-weight: 600; margin-bottom: 8px; min-height: 70px; display: flex; align-items: center; justify-content: center;">📈 Analysis</div>
+                <p style="font-size: 0.85rem; margin: 0; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Statistics,<br/>Rankings,<br/>Visualization</p>
+              </div>
+              <div style="font-size: 2rem; color: #b8a7cf; flex-shrink: 0; display: flex; align-items: center;">→</div>
+              <div style="text-align: center; flex: 1; min-width: 120px; display: flex; flex-direction: column;">
+                <div style="background: #b8a7cf; color: white; padding: 15px; border-radius: 8px; font-weight: 600; margin-bottom: 8px; min-height: 70px; display: flex; align-items: center; justify-content: center;">🗺️ Interactive<br/>Tool</div>
+                <p style="font-size: 0.85rem; margin: 0; flex-grow: 1; display: flex; align-items: center; justify-content: center;">Web app with<br/>map & filters</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section class="about-section">
           <h2 class="section-title">Research Question</h2>
           <div class="about-card">
             <p>
-              <strong>How do housing affordability and career opportunities vary across US cities for different business majors?</strong>
+              <strong>How do cost-of-living affordability and career opportunities vary across US cities for different business majors?</strong>
             </p>
             <p>
               This research question addresses the practical challenge faced by undergraduate business students at TCU: understanding which cities offer both strong career prospects and manageable living costs for their specific major and career path.
@@ -44,7 +71,7 @@
           <h2 class="section-title">Research Approach</h2>
           <div class="about-card">
             <p>
-              This project uses a <strong>quantitative, data-driven approach</strong> to evaluate affordability across major U.S. metropolitan areas for recent college graduates. The methodology combines publicly available economic data, data processing techniques, and web application development to create an interactive tool. The approach is inherently quantitative, relying on government-sourced numerical datasets (wages, employment, cost indices) to compare cities and career paths. However, the interactive nature of the tool allows users to qualitatively explore patterns and derive their own insights based on their individual circumstances.
+              This project combines quantitative data analysis with interactive visualization. It uses government-sourced datasets (wages, employment, cost indices) to compare affordability across U.S. metropolitan areas, while allowing users to explore patterns and derive personalized insights based on their situation.
             </p>
           </div>
         </section>
@@ -73,7 +100,7 @@
                 <strong>What was collected:</strong> State-level cost-of-living indices (base year 100 = national average) to adjust wages for regional affordability differences.
               </p>
               <p>
-                <strong>Why RPP over Rent:</strong> Unlike rent-based metrics, RPP reflects a broader set of expenses, including housing, transportation, food, and other goods and services, making it more suitable for evaluating overall affordability. This comprehensive approach provides a more accurate picture of true living costs across regions.
+                <strong>Why Regional Price Parities (RPP):</strong> Rather than tracking housing/rent separately (which varies by buy vs. rent, bedrooms, and neighborhood), RPP captures comprehensive cost-of-living: housing, transportation, food, utilities, and services. This holistic approach provides a truer picture of purchasing power across regions.
               </p>
               <p>
                 <strong>How it was collected:</strong> 2024 RPP data accessed through BEA's official publications and aggregated by state to enable cost-of-living adjustments at the metro level.
@@ -222,22 +249,10 @@
           <h2 class="section-title">Use of AI Tools</h2>
           <div class="about-card">
             <p>
-              AI tools such as ChatGPT and GitHub Copilot were used throughout the development process, especially for coding, debugging, and structuring. These tools were most helpful in speeding up technical tasks, such as identifying errors, refining JavaScript logic, and suggesting more efficient ways to organize data.
+              ChatGPT and GitHub Copilot accelerated coding and debugging tasks by reducing boilerplate and suggesting logic improvements. However, AI suggestions required careful evaluation—many outputs were too generic or misaligned with project goals.
             </p>
-          </div>
-          <div class="about-card">
             <p>
-              In addition, AI tools supported early-stage ideation, including how to structure the application, how to approach the affordability calculation, and how to improve the clarity of the user interface. However, these suggestions were not implemented blindly. Most of the outputs actually required a lot of modification, and in some cases, the suggested solutions were either too generic or did not fully align with the project's goals.
-            </p>
-          </div>
-          <div class="about-card">
-            <p>
-              <strong>Critical Thinking & Decision Making:</strong> This process reinforced an important lesson: while AI tools can significantly increase efficiency, they do not replace the need for critical thinking and understanding. Key decisions like selecting RPP over rent-based measures, designing the adjusted wage formula, and determining how to map majors to occupations were made independently. AI functioned as a great support tool rather than a decision-maker.
-            </p>
-          </div>
-          <div class="about-card">
-            <p>
-              <strong>Overall Impact:</strong> Using AI tools improved the speed and flexibility of development but required active evaluation to ensure accuracy and relevance. The most valuable AI contributions were reducing boilerplate code writing time and suggesting debugging approaches, which freed more time for domain-specific logic and research decisions. The trade-off was accepting some imperfect AI-generated code in favor of maintaining full ownership of data integrity and research rigor.
+              <strong>Critical Thinking Remained Essential:</strong> Key research decisions (using comprehensive RPP instead of isolating housing data, wage adjustment formula, major-to-occupation mapping) were made independently. AI served as a tool to speed up implementation, not guide strategy.
             </p>
           </div>
         </section>

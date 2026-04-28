@@ -69,6 +69,62 @@
         </section>
 
         <section class="about-section">
+          <h2 class="section-title">Map Marker Color Guide</h2>
+          <div style="background: #f8f7fa; padding: 25px; border-radius: 12px; border-left: 5px solid #4d1979;">
+            <p style="margin: 0 0 20px 0; color: #5a4b70; font-size: 0.95rem;">
+              Each city on the map is marked with either a star or circle. Stars highlight the best-paying city for each specific occupation, while circles show all other cities colored by their relative wage rank:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+              <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: white; border-radius: 8px; border: 2px solid #7c3aed;">
+                <svg width="32" height="32" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                  <path d="M12 1.8l3.12 6.31 6.96 1.01-5.04 4.91 1.19 6.93L12 17.67 5.77 20.96l1.19-6.93L1.92 9.12l6.96-1.01L12 1.8z" fill="#7c3aed" stroke="#4d1979" stroke-width="1" stroke-linejoin="round" />
+                </svg>
+                <div>
+                  <p style="margin: 0; font-weight: 600; color: #7c3aed;">Top for Occupation (Star)</p>
+                  <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #5a4b70;">Best-paying city for that specific job</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: white; border-radius: 8px; border: 2px solid #4d1979;">
+                <svg width="32" height="32" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="#4d1979" stroke="#4d1979" stroke-width="1" />
+                </svg>
+                <div>
+                  <p style="margin: 0; font-weight: 600; color: #4d1979;">Top 10% Earners</p>
+                  <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #5a4b70;">Highest adjusted wages</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: white; border-radius: 8px; border: 2px solid #6d2fa1;">
+                <svg width="32" height="32" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="#6d2fa1" stroke="#4d1979" stroke-width="1" />
+                </svg>
+                <div>
+                  <p style="margin: 0; font-weight: 600; color: #6d2fa1;">Top 20% Earners</p>
+                  <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #5a4b70;">Strong adjusted wages</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: white; border-radius: 8px; border: 2px solid #8f5bc2;">
+                <svg width="32" height="32" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="#8f5bc2" stroke="#4d1979" stroke-width="1" />
+                </svg>
+                <div>
+                  <p style="margin: 0; font-weight: 600; color: #8f5bc2;">Top 30% Earners</p>
+                  <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #5a4b70;">Good adjusted wages</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: white; border-radius: 8px; border: 2px solid #b999db;">
+                <svg width="32" height="32" viewBox="0 0 24 24" style="flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="#b999db" stroke="#4d1979" stroke-width="1" />
+                </svg>
+                <div>
+                  <p style="margin: 0; font-weight: 600; color: #b999db;">Below Top 30%</p>
+                  <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #5a4b70;">Moderate adjusted wages</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-section">
           <h2 class="section-title">What The Data Means</h2>
           <div class="about-grid">
             <article class="about-card">
@@ -127,26 +183,18 @@
           <h2 class="section-title">How The Quick Snapshot Works</h2>
           <div class="about-grid">
             <article class="about-card">
-              <h3>Highest Salary</h3>
+              <h3>Best Adjusted Wage</h3>
               <p>
-                This card identifies the city with the largest <code>adjusted_annual_mean_wage</code> in
-                the selected career path. The adjusted wage accounts for regional cost-of-living
-                differences, enabling fair salary comparison across metros.
+                The city with the largest <code>adjusted_annual_mean_wage</code> for your career path.
+                This represents the strongest financial opportunity after accounting for regional cost-of-living
+                and is used to rank the city list and highlight top locations on the map.
               </p>
             </article>
             <article class="about-card">
               <h3>Highest Location Quotient</h3>
               <p>
-                This card identifies the city with the largest <code>location_quotient</code>,
-                meaning the strongest occupation concentration.
-              </p>
-            </article>
-            <article class="about-card">
-              <h3>Best Adjusted Wage</h3>
-              <p>
-                This card identifies the city with the largest <code>adjusted_annual_mean_wage</code>, which
-                represents the strongest financial opportunity after accounting for regional cost-of-living.
-                This is used to rank the city list and highlight top locations on the map.
+                The city with the largest <code>location_quotient</code>,
+                meaning the strongest occupation concentration in that field.
               </p>
             </article>
           </div>
